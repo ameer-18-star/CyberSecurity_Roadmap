@@ -1,0 +1,2109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybersecurity Career Roadmap — Complete Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ========== RESET & VARIABLES ========== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg-primary: #06090f;
+  --bg-secondary: #0c1220;
+  --bg-tertiary: #131b2e;
+  --bg-card: #0f1629;
+  --border: #1a2540;
+  --accent: #00d4aa;
+  --accent-dim: #00a88a;
+  --accent-glow: rgba(0,212,170,0.15);
+  --text-primary: #e2e8f0;
+  --text-secondary: #8892a8;
+  --text-muted: #4a5568;
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.025;
+}
+a { color: var(--accent); text-decoration: none; transition: color .2s; }
+a:hover { color: #33eacc; }
+h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); font-weight: 700; line-height: 1.25; }
+code, .mono { font-family: var(--font-mono); }
+::selection { background: var(--accent); color: var(--bg-primary); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-dim); }
+
+/* ========== NAVIGATION ========== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(6,9,15,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: box-shadow .3s;
+}
+.nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.5); }
+.nav-logo { font-family: var(--font-heading); font-weight: 800; font-size: 1.15rem; color: var(--accent); letter-spacing: -0.02em; display: flex; align-items: center; gap: .5rem; }
+.nav-logo svg { width: 24px; height: 24px; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a { color: var(--text-secondary); font-family: var(--font-heading); font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; transition: color .2s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-toggle { display: none; background: none; border: none; color: var(--text-primary); cursor: pointer; font-size: 1.5rem; }
+
+/* ========== HERO ========== */
+.hero {
+  min-height: 80vh; display: flex; flex-direction: column; justify-content: center;
+  padding: 10rem 2rem 4rem; text-align: center; position: relative;
+  background: radial-gradient(ellipse at 30% 20%, rgba(0,212,170,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(99,102,241,0.04) 0%, transparent 50%);
+}
+.hero-badge {
+  display: inline-block; font-family: var(--font-mono); font-size: .8rem; color: var(--accent);
+  border: 1px solid rgba(0,212,170,0.3); padding: .35rem 1rem; border-radius: 999px;
+  margin-bottom: 1.5rem; background: rgba(0,212,170,0.06);
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 800; margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero p { max-width: 640px; margin: 0 auto 2.5rem; color: var(--text-secondary); font-size: 1.1rem; }
+.search-container { max-width: 520px; margin: 0 auto; position: relative; }
+.search-container input {
+  width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--border);
+  border-radius: var(--radius); background: var(--bg-secondary); color: var(--text-primary);
+  font-family: var(--font-body); font-size: 1rem; outline: none; transition: border-color .2s, box-shadow .2s;
+}
+.search-container input::placeholder { color: var(--text-muted); }
+.search-container input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
+.search-icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+
+/* ========== PATH CARDS GRID ========== */
+.section-header { text-align: center; margin-bottom: 3rem; }
+.section-header h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: .75rem; }
+.section-header p { color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+.paths-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem; max-width: 1200px; margin: 0 auto;
+}
+.path-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 1.75rem; cursor: pointer; transition: transform .25s, border-color .25s, box-shadow .25s;
+  position: relative; overflow: hidden;
+}
+.path-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--card-accent, var(--accent)); opacity: 0; transition: opacity .25s;
+}
+.path-card:hover { transform: translateY(-4px); border-color: var(--card-accent, var(--accent)); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+.path-card:hover::before { opacity: 1; }
+.path-card .card-icon { font-size: 2rem; margin-bottom: .75rem; }
+.path-card h3 { font-size: 1.15rem; margin-bottom: .5rem; }
+.path-card p { color: var(--text-secondary); font-size: .9rem; line-height: 1.55; }
+
+/* ========== CAREER DETAIL SECTIONS ========== */
+.career-detail {
+  max-width: 960px; margin: 0 auto 5rem; padding: 0 2rem;
+  animation: fadeUp .5s ease both;
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.career-detail .detail-header {
+  padding: 3rem 0 2rem; border-bottom: 2px solid var(--border); margin-bottom: 2rem;
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+}
+.detail-header .dh-icon { font-size: 2.5rem; }
+.detail-header h2 { font-size: 2rem; }
+.detail-header .dh-tag {
+  font-family: var(--font-mono); font-size: .75rem; padding: .25rem .75rem;
+  border-radius: 999px; border: 1px solid; opacity: .8;
+}
+.back-to-top {
+  display: inline-flex; align-items: center; gap: .4rem; font-family: var(--font-mono);
+  font-size: .8rem; color: var(--text-muted); margin-bottom: 2rem; cursor: pointer;
+  transition: color .2s; background: none; border: none;
+}
+.back-to-top:hover { color: var(--accent); }
+
+/* Collapsible sub-sections */
+.sub-section { margin-bottom: 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+.sub-toggle {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 1.25rem; background: var(--bg-secondary); border: none; color: var(--text-primary);
+  font-family: var(--font-heading); font-size: 1rem; font-weight: 600; cursor: pointer;
+  transition: background .2s;
+}
+.sub-toggle:hover { background: var(--bg-tertiary); }
+.sub-toggle .toggle-icon { font-size: 1.25rem; color: var(--accent); transition: transform .3s; font-weight: 400; }
+.sub-toggle.open .toggle-icon { transform: rotate(45deg); }
+.sub-content {
+  max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s ease;
+  padding: 0 1.25rem; background: var(--bg-card);
+}
+.sub-content.open { max-height: 8000px; padding: 1.25rem; }
+.sub-content h4 { font-size: 1.05rem; margin: 1.25rem 0 .5rem; color: var(--accent); }
+.sub-content h4:first-child { margin-top: 0; }
+.sub-content p, .sub-content li { color: var(--text-secondary); font-size: .95rem; }
+.sub-content ul, .sub-content ol { padding-left: 1.5rem; margin: .5rem 0; }
+.sub-content li { margin-bottom: .35rem; }
+.sub-content .note {
+  background: var(--accent-glow); border-left: 3px solid var(--accent);
+  padding: .75rem 1rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 1rem 0; font-size: .9rem; color: var(--text-secondary);
+}
+
+/* Roadmap Steps */
+.roadmap-steps { display: flex; flex-direction: column; gap: 0; margin: 1rem 0; }
+.roadmap-step {
+  display: flex; align-items: flex-start; gap: 1rem; position: relative;
+  padding: .75rem 0 .75rem .25rem;
+}
+.roadmap-step .step-marker {
+  width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-family: var(--font-mono); font-size: .75rem;
+  font-weight: 500; flex-shrink: 0; border: 2px solid var(--accent);
+  background: var(--bg-primary); color: var(--accent); position: relative; z-index: 1;
+}
+.roadmap-step:not(:last-child)::after {
+  content: ''; position: absolute; left: 19px; top: 48px; bottom: -8px;
+  width: 2px; background: var(--border);
+}
+.roadmap-step .step-content h5 { font-size: .95rem; color: var(--text-primary); }
+.roadmap-step .step-content p { font-size: .85rem; color: var(--text-muted); margin-top: .15rem; }
+
+/* Salary Table */
+.salary-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .9rem; }
+.salary-table th, .salary-table td { padding: .7rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+.salary-table th {
+  font-family: var(--font-heading); font-weight: 600; color: var(--accent);
+  background: var(--bg-secondary); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em;
+}
+.salary-table td { color: var(--text-secondary); }
+.salary-table tr:hover td { background: rgba(0,212,170,0.03); }
+
+/* Cert Cards */
+.cert-cards { display: grid; gap: 1rem; margin: 1rem 0; }
+.cert-card {
+  background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 1.25rem; transition: border-color .2s;
+}
+.cert-card:hover { border-color: var(--accent); }
+.cert-card h5 { font-size: 1rem; margin-bottom: .5rem; }
+.cert-card .cert-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: .5rem; }
+.cert-card .cert-tag {
+  font-family: var(--font-mono); font-size: .7rem; padding: .15rem .5rem;
+  border-radius: 999px; background: var(--bg-tertiary); color: var(--text-muted);
+}
+.cert-card p { font-size: .88rem; color: var(--text-secondary); }
+
+/* Tool Tags */
+.tool-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: .75rem 0; }
+.tool-tag {
+  font-family: var(--font-mono); font-size: .8rem; padding: .35rem .85rem;
+  background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 999px;
+  color: var(--text-secondary); transition: border-color .2s, color .2s;
+}
+.tool-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Resource Cards */
+.resource-group { margin: 1rem 0; }
+.resource-group h5 { font-size: .95rem; margin-bottom: .75rem; color: var(--text-primary); }
+.resource-links { display: grid; gap: .5rem; }
+.resource-link {
+  display: flex; align-items: center; gap: .75rem; padding: .75rem 1rem;
+  background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  color: var(--text-secondary); font-size: .9rem; transition: border-color .2s, color .2s;
+}
+.resource-link:hover { border-color: var(--accent); color: var(--text-primary); }
+.resource-link .rl-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+/* Project Cards */
+.project-cards { display: grid; gap: .75rem; margin: 1rem 0; }
+.project-card {
+  background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+}
+.project-card h5 { font-size: .95rem; margin-bottom: .35rem; }
+.project-card .pc-meta { display: flex; gap: .75rem; font-family: var(--font-mono); font-size: .75rem; color: var(--text-muted); margin-bottom: .35rem; }
+.project-card p { font-size: .88rem; color: var(--text-secondary); }
+
+/* Interview Q's */
+.interview-list { list-style: none; counter-reset: iq; }
+.interview-list li {
+  counter-increment: iq; padding: .6rem 0 .6rem 2.25rem; position: relative;
+  color: var(--text-secondary); font-size: .93rem; border-bottom: 1px solid rgba(26,37,64,0.5);
+}
+.interview-list li::before {
+  content: counter(iq); position: absolute; left: 0; top: .6rem;
+  font-family: var(--font-mono); font-size: .75rem; color: var(--accent); font-weight: 500;
+}
+
+/* Pros/Cons Grid */
+.proscons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1rem 0; }
+.proscons-col h5 { font-size: .95rem; margin-bottom: .5rem; }
+.proscons-col ul { padding-left: 1.25rem; }
+.proscons-col li { color: var(--text-secondary); font-size: .9rem; margin-bottom: .35rem; }
+
+/* Timeline */
+.timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; margin: 1rem 0; }
+.timeline-card {
+  background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 1.25rem; position: relative;
+}
+.timeline-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+.timeline-card h5 { font-family: var(--font-mono); font-size: .85rem; color: var(--accent); margin-bottom: .5rem; }
+.timeline-card li { color: var(--text-secondary); font-size: .88rem; margin-bottom: .25rem; }
+.timeline-card ul { padding-left: 1.1rem; }
+
+/* ========== COMPARISON TABLE ========== */
+.table-wrap { overflow-x: auto; margin: 2rem 0; border: 1px solid var(--border); border-radius: var(--radius); }
+.comp-table { width: 100%; border-collapse: collapse; font-size: .85rem; min-width: 1000px; }
+.comp-table th, .comp-table td { padding: .75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.comp-table th {
+  font-family: var(--font-heading); font-weight: 600; color: var(--accent);
+  background: var(--bg-tertiary); position: sticky; top: 0; font-size: .78rem;
+  text-transform: uppercase; letter-spacing: .04em;
+}
+.comp-table td { color: var(--text-secondary); background: var(--bg-card); }
+.comp-table tr:hover td { background: var(--bg-secondary); }
+
+/* ========== FAQ ========== */
+.faq-item { border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: .75rem; overflow: hidden; }
+.faq-q {
+  width: 100%; padding: 1rem 1.25rem; background: var(--bg-secondary); border: none;
+  color: var(--text-primary); font-family: var(--font-heading); font-size: .95rem;
+  font-weight: 600; cursor: pointer; text-align: left; display: flex;
+  justify-content: space-between; align-items: center; transition: background .2s;
+}
+.faq-q:hover { background: var(--bg-tertiary); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .3s ease; padding: 0 1.25rem; background: var(--bg-card); }
+.faq-a.open { max-height: 600px; padding: 1rem 1.25rem; }
+.faq-a p { color: var(--text-secondary); font-size: .93rem; }
+
+/* ========== MASTER ROADMAP ========== */
+.master-roadmap-steps {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem; margin: 2rem 0;
+}
+.master-step {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 1.25rem; text-align: center; position: relative;
+}
+.master-step .ms-num {
+  font-family: var(--font-mono); font-size: .75rem; color: var(--accent);
+  background: var(--accent-glow); padding: .15rem .5rem; border-radius: 999px;
+  display: inline-block; margin-bottom: .5rem;
+}
+.master-step h4 { font-size: .95rem; margin-bottom: .35rem; }
+.master-step p { font-size: .82rem; color: var(--text-muted); }
+
+/* ========== RESOURCES SECTION ========== */
+.res-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.5rem; margin: 2rem 0; }
+.res-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.res-card h4 { font-size: 1rem; margin-bottom: .75rem; display: flex; align-items: center; gap: .5rem; }
+.res-card ul { padding-left: 1.25rem; }
+.res-card li { color: var(--text-secondary); font-size: .9rem; margin-bottom: .3rem; }
+
+/* ========== FOOTER ========== */
+.footer {
+  border-top: 1px solid var(--border); padding: 3rem 2rem; text-align: center;
+  color: var(--text-muted); font-size: .85rem; margin-top: 4rem;
+}
+.footer p { margin-bottom: .35rem; }
+
+/* ========== CONTAINER & LAYOUT ========== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.content-section { padding: 5rem 0; }
+.content-section:nth-child(even) { background: var(--bg-secondary); }
+
+/* ========== UTILITIES ========== */
+.text-accent { color: var(--accent); }
+.text-muted { color: var(--text-muted); }
+.mt-1 { margin-top: .5rem; }
+.mt-2 { margin-top: 1rem; }
+.mb-1 { margin-bottom: .5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+.hidden { display: none !important; }
+.fade-in { animation: fadeUp .5s ease both; }
+.no-results { text-align: center; padding: 3rem; color: var(--text-muted); font-size: 1.1rem; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0;
+    background: rgba(6,9,15,0.97); backdrop-filter: blur(16px); padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border); gap: 1rem;
+  }
+  .nav-toggle { display: block; }
+  .hero { padding: 8rem 1.5rem 3rem; min-height: 60vh; }
+  .hero h1 { font-size: 2rem; }
+  .paths-grid { grid-template-columns: 1fr; }
+  .proscons { grid-template-columns: 1fr; }
+  .timeline-grid { grid-template-columns: 1fr 1fr; }
+  .career-detail { padding: 0 1rem; }
+  .detail-header h2 { font-size: 1.5rem; }
+  .container { padding: 0 1rem; }
+  .master-roadmap-steps { grid-template-columns: 1fr 1fr; }
+  .res-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .timeline-grid { grid-template-columns: 1fr; }
+  .master-roadmap-steps { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav" id="mainNav">
+  <a href="#hero" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    CyberRoadmap
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#paths">Career Paths</a></li>
+    <li><a href="#comparison">Compare</a></li>
+    <li><a href="#master-roadmap">Roadmap</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#resources">Resources</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+  <div class="hero-badge">// The Complete Guide to Cybersecurity Careers</div>
+  <h1>Your Cybersecurity<br>Career Roadmap</h1>
+  <p>Explore every major cybersecurity career path. Understand what to learn, where to learn it, which certifications to get, and how to land your first job — all in one place.</p>
+  <div class="search-container">
+    <span class="search-icon">&#128269;</span>
+    <input type="text" id="searchInput" placeholder="Search career paths, skills, tools..." autocomplete="off">
+  </div>
+</section>
+
+<!-- ========== CAREER PATH CARDS ========== -->
+<section class="content-section" id="paths">
+  <div class="container">
+    <div class="section-header">
+      <h2>Choose Your Path</h2>
+      <p>Each domain below is a complete career track. Click any card to explore the full roadmap.</p>
+    </div>
+    <div class="paths-grid" id="pathsGrid"></div>
+    <div class="no-results hidden" id="noResults">No career paths match your search.</div>
+  </div>
+</section>
+
+<!-- ========== CAREER DETAIL SECTIONS (injected by JS) ========== -->
+<div id="careerDetails"></div>
+
+<!-- ========== COMPARISON TABLE ========== -->
+<section class="content-section" id="comparison">
+  <div class="container">
+    <div class="section-header">
+      <h2>Compare All Paths</h2>
+      <p>A side-by-side look at every cybersecurity career track to help you decide.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="comp-table" id="compTable"></table>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MASTER ROADMAP ========== -->
+<section class="content-section" id="master-roadmap">
+  <div class="container">
+    <div class="section-header">
+      <h2>Master Learning Roadmap</h2>
+      <p>Follow this universal foundation before specializing. Every cybersecurity professional should complete these steps.</p>
+    </div>
+    <div class="master-roadmap-steps" id="masterRoadmap"></div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="content-section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2>Beginner FAQs</h2>
+      <p>Honest answers to the questions every newcomer asks.</p>
+    </div>
+    <div id="faqContainer" style="max-width:760px;margin:0 auto;"></div>
+  </div>
+</section>
+
+<!-- ========== RESOURCES ========== -->
+<section class="content-section" id="resources">
+  <div class="container">
+    <div class="section-header">
+      <h2>Useful Resources</h2>
+      <p>Curated YouTube channels, blogs, books, podcasts, and more to accelerate your learning.</p>
+    </div>
+    <div class="res-grid" id="resGrid"></div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <p><strong>Cybersecurity Career Roadmap</strong></p>
+  <p>Built to help beginners navigate the cybersecurity landscape. All salary figures and timelines are approximate.</p>
+  <p class="mt-1">Made with care for aspiring defenders, researchers, and ethical hackers.</p>
+</footer>
+
+<script>
+/* ================================================================
+   CAREER PATH DATA
+   Each object contains all 15 sections for a career path.
+   ================================================================ */
+
+const CAREERS = [
+// ==================== 1. OFFENSIVE SECURITY ====================
+{
+id:'offensive',icon:'⚔️',name:'Offensive Security',color:'#ef4444',
+tagline:'Think like an attacker to protect like a defender.',
+comparison:{difficulty:'High',coding:'High',linux:'High',networking:'High',cloud:'Medium',certs:'OSCP, PNPT, GPEN',salary:'$80K–$160K',remote:'Yes',demand:'High',bestFor:'Curious tinkerers who love breaking things'},
+intro:{
+  desc:'Offensive Security is the practice of simulating real-world cyberattacks against organizations to find vulnerabilities before malicious actors do. Professionals in this field adopt the mindset of an attacker — probing systems, applications, and networks to expose weaknesses.',
+  daily:['Conduct penetration tests on web apps, APIs, networks, and cloud environments','Write detailed reports with findings, risk ratings, and remediation advice','Research new exploits, CVEs, and attack techniques','Collaborate with defensive teams to improve security posture','Present findings to both technical and executive audiences'],
+  who:['People who love puzzles and problem-solving','Those who are naturally curious about how systems work (and break)','Individuals comfortable with Linux, scripting, and self-directed learning','Anyone who enjoys competitive, hands-on challenges (CTFs, bug bounties)'],
+  skills:['Strong networking fundamentals (TCP/IP, DNS, HTTP)','Linux proficiency','Scripting (Python, Bash, PowerShell)','Web application architecture knowledge','Creative thinking and persistence']
+},
+jobs:['Penetration Tester','Web Application Pentester','API Security Tester','Mobile Pentester','Red Team Operator','Vulnerability Assessment Engineer','Security Consultant','Exploit Developer','Adversary Simulation Specialist','Purple Team Engineer'],
+progression:['Junior Penetration Tester','Penetration Tester','Senior Penetration Tester / Red Team Operator','Principal Consultant / Red Team Lead','Director of Offensive Security / CISO'],
+salary:[
+  {region:'India',entry:'₹4–8 LPA',mid:'₹10–20 LPA',senior:'₹25–50 LPA'},
+  {region:'USA',entry:'$65–85K',mid:'$95–130K',senior:'$140–180K+'},
+  {region:'Europe',entry:'€40–55K',mid:'€60–90K',senior:'€100–140K+'}
+],
+skills:{
+  beginner:['Computer networking (TCP/IP, OSI model, subnetting)','Linux command line','Basic Python or Bash scripting','Web technologies (HTML, CSS, JavaScript, HTTP)','Understanding of common vulnerabilities (OWASP Top 10)'],
+  intermediate:['Burp Suite proficiency','Network scanning and enumeration (Nmap, masscan)','Active Directory attacks','Privilege escalation techniques (Linux & Windows)','Report writing and communication'],
+  advanced:['Custom exploit development','Binary exploitation / buffer overflows','Red team tradecraft (C2 frameworks, evasion)','Cloud penetration testing (AWS, Azure, GCP)','Reverse engineering fundamentals']
+},
+roadmap:[
+  {title:'Computer & Networking Basics',desc:'OSI model, TCP/IP, DNS, HTTP, subnetting, common protocols'},
+  {title:'Linux Fundamentals',desc:'Command line, file systems, permissions, bash scripting'},
+  {title:'Programming',desc:'Python for scripting, Bash automation, basic C/JavaScript'},
+  {title:'Web Technologies',desc:'How web apps work, HTTP methods, cookies, sessions, REST APIs'},
+  {title:'Security Fundamentals',desc:'OWASP Top 10, common attack types, defense-in-depth concepts'},
+  {title:'Penetration Testing Methodology',desc:'Reconnaissance, scanning, exploitation, post-exploitation, reporting'},
+  {title:'Hands-on Labs',desc:'TryHackMe, Hack The Box, PortSwigger Academy, PentesterLab'},
+  {title:'Specialization',desc:'Web, network, mobile, cloud, or AD-focused pentesting'},
+  {title:'Certifications',desc:'eJPT → PNPT or CompTIA PenTest+ → OSCP'},
+  {title:'Build Portfolio',desc:'Write blog posts, publish CTF writeups, document lab work'},
+  {title:'Job Ready',desc:'Apply for junior pentester roles with portfolio and certifications'}
+],
+resources:{
+  youtube:[
+    {name:'The Cyber Mentor — Ethical Hacking Course',url:'https://www.youtube.com/c/TheCyberMentor'},
+    {name:'NetworkChuck — Hacking & Networking',url:'https://www.youtube.com/c/NetworkChuck'},
+    {name:'John Hammond — CTF & Pentesting',url:'https://www.youtube.com/c/JohnHammond010'},
+    {name:'LiveOverflow — Exploit Development & Web Security',url:'https://www.youtube.com/c/LiveOverflow'},
+    {name:'STÖK — Bug Bounty & Recon',url:'https://www.youtube.com/c/STOKfredrik'},
+    {name:'David Bombal — Ethical Hacking Labs',url:'https://www.youtube.com/c/DavidBombal'}
+  ],
+  docs:[
+    {name:'OWASP Testing Guide',url:'https://owasp.org/www-project-web-security-testing-guide/'},
+    {name:'PortSwigger Web Security Academy',url:'https://portswigger.net/web-security'},
+    {name:'HackTricks — Pentesting Wiki',url:'https://book.hacktricks.xyz/'},
+    {name:'PayloadsAllTheThings',url:'https://github.com/swisskyrepo/PayloadsAllTheThings'}
+  ],
+  websites:[
+    {name:'TryHackMe',url:'https://tryhackme.com',desc:'Beginner-friendly guided labs'},
+    {name:'Hack The Box',url:'https://hackthebox.com',desc:'Realistic pentesting challenges'},
+    {name:'PentesterLab',url:'https://pentesterlab.com',desc:'Web exploitation exercises'},
+    {name:'VulnHub',url:'https://vulnhub.com',desc:'Downloadable vulnerable VMs'}
+  ]
+},
+practice:{
+  beginner:['TryHackMe — Complete Beginner and Pre-Security paths','OverTheWire Bandit (Linux basics)','PicoCTF (intro to CTFs)'],
+  intermediate:['Hack The Box — Starting Point then Easy/Medium machines','PortSwigger Academy — all labs','PentesterLab PRO exercises'],
+  advanced:['Hack The Box Pro labs (RastaLabs, Offshore)','CTFtime.org — live competitions','Bug bounty programs (HackerOne, Bugcrowd)']
+},
+projects:[
+  {name:'Port Scanner',difficulty:'Beginner',time:'1–2 days',desc:'Build a TCP port scanner in Python. Skills: sockets, threading, networking.'},
+  {name:'Subdomain Enumerator',difficulty:'Beginner',time:'2–3 days',desc:'Discover subdomains using wordlists. Skills: DNS, HTTP, Python.'},
+  {name:'Keylogger (Educational)',difficulty:'Intermediate',time:'3–5 days',desc:'Understand input capture. Skills: OS APIs, Python, ethics.'},
+  {name:'Vulnerability Scanner',difficulty:'Intermediate',time:'1–2 weeks',desc:'Automate checks for common vulns. Skills: HTTP, regex, Python.'},
+  {name:'Custom C2 Framework',difficulty:'Advanced',time:'2–4 weeks',desc:'Build a command-and-control tool. Skills: networking, encryption, evasion.'},
+  {name:'Buffer Overflow Exploit',difficulty:'Advanced',time:'1–2 weeks',desc:'Exploit a vulnerable binary. Skills: memory layout, shellcode, C/Assembly.'}
+],
+certs:[
+  {name:'CompTIA Security+',level:'Beginner',difficulty:'Easy–Medium',prereqs:'None (Network+ recommended)',cost:'~$392',what:'Broad security fundamentals, foundational vocabulary',exp:'0–6 months experience'},
+  {name:'eJPT (eLearnSecurity Junior Penetration Tester)',level:'Beginner',difficulty:'Medium',prereqs:'Basic networking and Linux',cost:'~$249',what:'Practical penetration testing methodology',exp:'3–6 months study'},
+  {name:'CompTIA PenTest+',level:'Intermediate',difficulty:'Medium',prereqs:'Security+ or equivalent knowledge',cost:'~$392',what:'Planning, scoping, and performing penetration tests',exp:'1–2 years'},
+  {name:'PNPT (Practical Network Penetration Tester)',level:'Intermediate',difficulty:'Medium–Hard',prereqs:'Solid pentesting fundamentals',cost:'~$399',what:'Full pentest lifecycle including AD, report writing, and debrief',exp:'1–2 years'},
+  {name:'OSCP (Offensive Security Certified Professional)',level:'Advanced',difficulty:'Hard',prereqs:'Strong Linux, networking, and scripting',cost:'~$1,599+',what:'Hands-on 24-hour exam: compromise multiple machines, write report',exp:'2–3 years'},
+  {name:'OSEP / OSED / CRTO',level:'Advanced',difficulty:'Very Hard',prereqs:'OSCP-level skills',cost:'$1,200–$2,000+',what:'Advanced exploit dev, evasion, red team ops',exp:'3+ years'}
+],
+tools:['Burp Suite','Nmap','Metasploit','Cobalt Strike','BloodHound','Responder','CrackMapExec','Impacket','Hashcat','John the Ripper','Ghidra','Wireshark','Chisel','ligolo-ng','Sliver','sqlmap','ffuf / Feroxbuster','Nuclei'],
+interview:{
+  questions:['Explain the penetration testing methodology from start to finish.','What is the difference between a vulnerability assessment and a penetration test?','How would you enumerate and attack an Active Directory environment?','Explain how SQL injection works and how to prevent it.','What is privilege escalation? Give examples on Linux and Windows.'],
+  practical:['Demonstrate finding and exploiting a web vulnerability on a test app.','Explain your approach to a black-box network pentest.','Show how you would pivot through a network after initial access.','Walk through a report you have written — what makes a good report?'],
+  tips:['Document everything you do — labs, CTFs, blog posts.','Write at least 3–5 detailed pentest reports or CTF writeups.','Be ready to explain your methodology, not just tool usage.','Know networking deeply — interviewers test fundamentals.']
+},
+dailyWork:['Morning: Review scope and rules of engagement for new pentest','Mid-morning: Reconnaissance — subdomain enumeration, port scanning, OSINT','Afternoon: Exploitation and manual testing of web apps or internal network','Late afternoon: Document findings, screenshot evidence, draft report','End of day: Research new techniques, update tools, prepare for next engagement'],
+prosCons:{
+  pros:['Constantly learning and solving new puzzles','High demand and strong salaries','Remote-friendly work','Directly improves organizational security','Intellectually stimulating and never boring'],
+  cons:['Steep learning curve — requires broad and deep knowledge','Can be stressful under tight deadlines','Must stay current with rapidly evolving threats','Report writing is a significant part of the job','Ethical boundaries must be rigorously maintained'],
+  careerGrowth:'Excellent. Can lead to Red Team Lead, Security Architect, CISO, or independent consulting.',
+  workLife:'Generally good, though engagement deadlines can create crunch periods. Most firms offer flexible schedules.',
+  remote:'Very remote-friendly. Most testing can be done over VPN.'
+},
+timeline:{
+  '0–3':'Learn networking, Linux, and basic Python. Start TryHackMe Pre-Security path.',
+  '3–6':'Complete web security fundamentals. Work through PortSwigger Academy. Begin Hack The Box.',
+  '6–12':'Pursue eJPT or CompTIA PenTest+. Build first portfolio projects. Start CTF writeups.',
+  '1–2 Years':'Earn OSCP or PNPT. Apply for junior pentester roles. Continue building lab portfolio.'
+}
+},
+// ==================== 2. DEFENSIVE SECURITY ====================
+{
+id:'defensive',icon:'🛡️',name:'Defensive Security',color:'#3b82f6',
+tagline:'Detect, respond, and protect against cyber threats.',
+comparison:{difficulty:'Medium',coding:'Medium',linux:'Medium',networking:'High',cloud:'Medium',certs:'Security+, CySA+, GCIA',salary:'$65K–$150K',remote:'Yes',demand:'Very High',bestFor:'Analytical thinkers who enjoy monitoring and investigation'},
+intro:{
+  desc:'Defensive Security (Blue Team) focuses on protecting organizations from cyber threats. Professionals monitor systems for intrusions, investigate security incidents, harden infrastructure, and build detection capabilities.',
+  daily:['Monitor SIEM dashboards and investigate security alerts','Analyze logs from firewalls, endpoints, and cloud services','Respond to security incidents — triage, contain, eradicate','Write detection rules and tune alerting thresholds','Harden systems and implement security controls'],
+  who:['People who enjoy analysis and investigation','Those who like monitoring and operational work','Individuals comfortable with repetitive, detail-oriented tasks','Anyone who wants to be the shield, not the sword'],
+  skills:['Strong networking knowledge','Log analysis and SIEM proficiency','Incident response methodology','Windows and Linux administration','Scripting for automation']
+},
+jobs:['SOC Analyst (Level 1, 2, 3)','Incident Response Analyst','Threat Hunter','Detection Engineer','Security Operations Engineer','Blue Team Lead','DFIR Specialist','Security Monitoring Analyst','Vulnerability Management Analyst'],
+progression:['Junior SOC Analyst','SOC Analyst Level 2 / IR Analyst','Senior Analyst / Threat Hunter','SOC Manager / IR Lead','Director of Security Operations / CISO'],
+salary:[
+  {region:'India',entry:'₹3–6 LPA',mid:'₹8–18 LPA',senior:'₹22–45 LPA'},
+  {region:'USA',entry:'$55–75K',mid:'$85–120K',senior:'$130–160K+'},
+  {region:'Europe',entry:'€35–50K',mid:'€55–85K',senior:'€90–130K+'}
+],
+skills:{
+  beginner:['Computer networking fundamentals','Operating system basics (Windows & Linux)','Understanding of common attack types','SIEM concepts (what it is, why it matters)','Basic log analysis'],
+  intermediate:['SIEM platforms (Splunk, Elastic, Microsoft Sentinel)','Writing detection rules and queries','Incident response lifecycle','Malware analysis basics','Endpoint detection tools (EDR)'],
+  advanced:['Threat hunting methodologies','Advanced persistent threat (APT) analysis','Memory forensics','Automation and orchestration (SOAR)','Adversary emulation and purple teaming']
+},
+roadmap:[
+  {title:'Networking & OS Fundamentals',desc:'TCP/IP, Windows/Linux administration, Active Directory basics'},
+  {title:'Security Fundamentals',desc:'CIA triad, attack types, defense-in-depth, security frameworks'},
+  {title:'Log Analysis',desc:'Reading and interpreting logs from firewalls, servers, and endpoints'},
+  {title:'SIEM Mastery',desc:'Splunk or Elastic — searching, dashboards, alerting, correlation'},
+  {title:'Incident Response',desc:'NIST IR lifecycle: preparation, detection, containment, recovery, lessons learned'},
+  {title:'Threat Intelligence Basics',desc:'IOCs, TTPs, MITRE ATT&CK framework, threat feeds'},
+  {title:'Endpoint Security',desc:'EDR tools, Windows Event Logs, Sysmon configuration'},
+  {title:'Detection Engineering',desc:'Writing Sigma rules, YARA rules, tuning false positives'},
+  {title:'Certifications',desc:'Security+ → CySA+ → GCIA or BTL1'},
+  {title:'Hands-on Practice',desc:'SOC labs, Blue Team Labs Online, CyberDefenders'},
+  {title:'Job Ready',desc:'Apply for SOC Analyst roles with labs and certifications'}
+],
+resources:{
+  youtube:[
+    {name:'Professor Messer — CompTIA Security+',url:'https://www.youtube.com/c/professormesser'},
+    {name:'John Hammond — Blue Team Content',url:'https://www.youtube.com/c/JohnHammond010'},
+    {name:'The Cyber Mentor — SOC & IR Content',url:'https://www.youtube.com/c/TheCyberMentor'},
+    {name:'13Cubed — DFIR & Investigation',url:'https://www.youtube.com/c/13Cubed'},
+    {name:'SecurityFWD — Security Operations',url:'https://www.youtube.com/c/SecurityFWD'}
+  ],
+  docs:[
+    {name:'MITRE ATT&CK Framework',url:'https://attack.mitre.org/'},
+    {name:'NIST Incident Response Guide',url:'https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final'},
+    {name:'Splunk Documentation',url:'https://docs.splunk.com/'},
+    {name:'Elastic Security Documentation',url:'https://www.elastic.co/guide/en/security/current/index.html'}
+  ],
+  websites:[
+    {name:'Blue Team Labs Online',url:'https://blueteamlabs.online',desc:'SOC and IR challenges'},
+    {name:'CyberDefenders',url:'https://cyberdefenders.org',desc:'Blue team CTF challenges'},
+    {name:'TryHackMe SOC Level 1 Path',url:'https://tryhackme.com/path/outline/soclevel1',desc:'Structured SOC analyst training'},
+    {name:'LetsDefend',url:'https://letsdefend.io',desc:'SOC simulator with real alerts'}
+  ]
+},
+practice:{
+  beginner:['TryHackMe SOC Level 1 path','Blue Team Labs Online — Beginner challenges','CyberDefenders — Starter challenges'],
+  intermediate:['LetsDefend — Full SOC simulation','Splunk Boss of the SOC (BOTS) dataset','Security Onion / ELK lab setup'],
+  advanced:['SANS Holiday Hack Challenge','Active incident response in home lab','Build a detection engineering pipeline with Sigma + ELK']
+},
+projects:[
+  {name:'Home SIEM Lab',difficulty:'Beginner',time:'3–5 days',desc:'Deploy Splunk or Elastic in a VM and ingest Windows/Linux logs. Skills: SIEM setup, log management.'},
+  {name:'Alert Dashboard',difficulty:'Beginner',time:'2–3 days',desc:'Create a dashboard visualizing security events. Skills: SPL/KQL, data visualization.'},
+  {name:'Log Analyzer Script',difficulty:'Intermediate',time:'1 week',desc:'Parse and correlate logs to detect anomalies. Skills: Python, regex, log formats.'},
+  {name:'Incident Response Playbook',difficulty:'Intermediate',time:'1 week',desc:'Document IR procedures for common scenarios. Skills: IR methodology, documentation.'},
+  {name:'SOC Automation Tool',difficulty:'Advanced',time:'2–3 weeks',desc:'Automate alert triage using APIs. Skills: Python, REST APIs, SOAR concepts.'},
+  {name:'Detection Rule Library',difficulty:'Advanced',time:'Ongoing',desc:'Build a collection of Sigma rules for MITRE ATT&CK techniques. Skills: detection engineering.'}
+],
+certs:[
+  {name:'CompTIA Security+',level:'Beginner',difficulty:'Easy–Medium',prereqs:'None',cost:'~$392',what:'Broad security foundations',exp:'0–6 months'},
+  {name:'CompTIA CySA+',level:'Intermediate',difficulty:'Medium',prereqs:'Security+',cost:'~$392',what:'Threat detection, analysis, and response',exp:'1–2 years'},
+  {name:'BTL1 (Blue Team Level 1)',level:'Intermediate',difficulty:'Medium',prereqs:'Basic SOC knowledge',cost:'~$499',what:'Hands-on blue team skills: SIEM, IR, forensics, threat intel',exp:'6–12 months'},
+  {name:'GCIA (GIAC Certified Intrusion Analyst)',level:'Intermediate–Advanced',difficulty:'Hard',prereqs:'Networking and IDS knowledge',cost:'~$2,499 (with training)',what:'Deep network traffic analysis and IDS tuning',exp:'2+ years'},
+  {name:'GCIH (GIAC Incident Handler)',level:'Advanced',difficulty:'Hard',prereqs:'IR experience',cost:'~$2,499',what:'Advanced incident handling and response',exp:'2+ years'},
+  {name:'GCFA (GIAC Certified Forensic Analyst)',level:'Advanced',difficulty:'Very Hard',prereqs:'DFIR experience',cost:'~$2,499',what:'Advanced digital forensics and incident response',exp:'3+ years'}
+],
+tools:['Splunk','Elastic/ELK Stack','Microsoft Sentinel','Wireshark','Zeek (Bro)','Sigma Rules','YARA','Velociraptor','Sysmon','CrowdStrike Falcon','Microsoft Defender for Endpoint','Carbon Black','osquery','TheHive','Cortex','Shuffle (SOAR)'],
+interview:{
+  questions:['Walk me through how you would investigate a suspicious phishing email.','Explain the difference between SIEM, SOAR, and EDR.','How do you distinguish true positives from false positives?','Describe the incident response lifecycle.','What MITRE ATT&CK techniques would you look for in a compromised endpoint?'],
+  practical:['Analyze a PCAP file and identify malicious traffic','Write a Splunk/Elastic query to detect a specific attack pattern','Triage a set of alerts and prioritize them','Perform a basic investigation using provided logs'],
+  tips:['Know the MITRE ATT&CK framework well — reference it in interviews.','Practice Splunk/Elastic queries until fluent.','Be able to explain your thought process during investigations.','Show you can communicate findings to non-technical stakeholders.']
+},
+dailyWork:['Start shift by reviewing overnight alerts and handoff notes from previous SOC shift','Triage incoming alerts — classify as true positive, false positive, or needs investigation','Deep-dive investigation of escalated incidents — pull logs, check IOCs, correlate events','Write or update detection rules based on new threat intelligence','Participate in threat hunts based on hypotheses about adversary behavior','Document incidents and update runbooks/playbooks'],
+prosCons:{
+  pros:['High demand — every organization needs defenders','Clear career progression','Develop deep analytical skills','Protect real people and organizations','Good work-life balance in many SOC roles'],
+  cons:['SOC shifts can include nights and weekends (24/7 operations)','Alert fatigue is a real challenge','Can feel repetitive at Level 1','Less "exciting" than offensive work for some','Constantly evolving — must keep learning'],
+  careerGrowth:'Strong. SOC Analyst → Threat Hunter → SOC Manager → Security Director → CISO.',
+  workLife:'Shift work is common in SOC roles (rotational). Senior and threat hunting roles tend to be more regular hours.',
+  remote:'Increasingly remote-friendly, especially post-2020. Some SOC roles require on-site presence.'
+},
+timeline:{
+  '0–3':'Learn networking, OS basics, and security fundamentals. Start Security+ study.',
+  '3–6':'Complete TryHackMe SOC Level 1. Practice Splunk queries. Study log analysis.',
+  '6–12':'Earn Security+ and CySA+ or BTL1. Build SOC lab. Start applying for L1 SOC roles.',
+  '1–2 Years':'Gain SOC experience. Specialize in IR, threat hunting, or detection engineering. Pursue GCIA/GCIH.'
+}
+},
+// ==================== 3. GRC ====================
+{
+id:'grc',icon:'🟣',name:'GRC (Governance, Risk & Compliance)',color:'#8b5cf6',
+tagline:'Bridge the gap between security and business.',
+comparison:{difficulty:'Low–Med',coding:'Low',linux:'Low',networking:'Low',cloud:'Medium',certs:'Security+, CISA, CRISC, CISM',salary:'$70K–$160K',remote:'Yes',demand:'High',bestFor:'Business-minded professionals who want to shape security policy'},
+intro:{
+  desc:'GRC professionals ensure organizations meet regulatory requirements, manage risk effectively, and maintain strong security governance. They translate technical risks into business language and help leadership make informed decisions.',
+  daily:['Conduct risk assessments and maintain risk registers','Ensure compliance with frameworks like ISO 27001, NIST, SOC 2, GDPR, HIPAA','Develop and review security policies, standards, and procedures','Prepare for and support internal/external audits','Report security posture to executive leadership and boards'],
+  who:['People who enjoy writing, policy, and structured frameworks','Those with business, legal, or management backgrounds','Individuals who are organized and detail-oriented','Anyone who wants cybersecurity without deep technical work'],
+  skills:['Understanding of security frameworks and regulations','Risk assessment methodologies','Excellent written and verbal communication','Project management','Basic technical security knowledge']
+},
+jobs:['GRC Analyst','IT Risk Analyst','Compliance Analyst','Information Security Analyst (Policy-focused)','Third-Party Risk Analyst','Security Auditor','Governance Specialist','Privacy Analyst','CISO (long-term)'],
+progression:['GRC Analyst / Compliance Analyst','Senior GRC Analyst / Risk Manager','GRC Manager / Director of Compliance','VP of Risk & Compliance / CISO'],
+salary:[
+  {region:'India',entry:'₹4–8 LPA',mid:'₹10–22 LPA',senior:'₹25–55 LPA'},
+  {region:'USA',entry:'$60–80K',mid:'$90–130K',senior:'$140–180K+'},
+  {region:'Europe',entry:'€40–55K',mid:'€60–95K',senior:'€100–150K+'}
+],
+skills:{
+  beginner:['Understanding of IT and business processes','Familiarity with compliance frameworks (NIST CSF, ISO 27001)','Basic cybersecurity concepts','Strong writing and documentation skills','Microsoft Office / Google Workspace proficiency'],
+  intermediate:['Risk assessment methodologies (FAIR, NIST RMF)','Audit preparation and evidence collection','Vendor and third-party risk management','Data privacy regulations (GDPR, CCPA)','Security policy writing and maintenance'],
+  advanced:['Strategic security program development','Board-level reporting and executive communication','Regulatory landscape across industries','Business continuity and disaster recovery planning','Leading audit engagements and managing compliance programs']
+},
+roadmap:[
+  {title:'IT & Business Fundamentals',desc:'Understand how businesses operate and how IT supports them'},
+  {title:'Cybersecurity Basics',desc:'CIA triad, common threats, basic security controls'},
+  {title:'Security Frameworks',desc:'NIST CSF, ISO 27001/27002, COBIT, CIS Controls'},
+  {title:'Risk Management',desc:'Risk assessment, risk registers, risk treatment plans, FAIR methodology'},
+  {title:'Compliance & Regulations',desc:'GDPR, HIPAA, PCI-DSS, SOC 2, industry-specific requirements'},
+  {title:'Policy Development',desc:'Writing security policies, standards, procedures, and guidelines'},
+  {title:'Audit & Assurance',desc:'Internal vs external audits, evidence collection, gap analysis'},
+  {title:'Certifications',desc:'Security+ → CISA → CRISC or CISM'},
+  {title:'GRC Tools',desc:'Archer, ServiceNow GRC, OneTrust, Vanta, Drata'},
+  {title:'Job Ready',desc:'Apply for GRC Analyst, Compliance Analyst, or Risk Analyst roles'}
+],
+resources:{
+  youtube:[
+    {name:'Professor Messer — CompTIA Security+',url:'https://www.youtube.com/c/professormesser'},
+    {name:'IAPP — Privacy & Data Protection',url:'https://www.youtube.com/c/privacyassociation'},
+    {name:'David Bombal — Networking & Security Basics',url:'https://www.youtube.com/c/DavidBombal'},
+    {name:'SANS Institute — GRC Webcasts',url:'https://www.youtube.com/@SANSInstitute'}
+  ],
+  docs:[
+    {name:'NIST Cybersecurity Framework',url:'https://www.nist.gov/cyberframework'},
+    {name:'ISO 27001 Overview',url:'https://www.iso.org/isoiec-27001-information-security.html'},
+    {name:'OWASP Risk Rating Methodology',url:'https://owasp.org/www-community/OWASP_Risk_Rating_Methodology'},
+    {name:'GDPR Official Text',url:'https://gdpr.eu/'}
+  ],
+  websites:[
+    {name:'NIST Computer Security Resource Center',url:'https://csrc.nist.gov/',desc:'Official NIST standards and guidelines'},
+    {name:'ISACA Resources',url:'https://www.isaca.org/resources',desc:'CISA/CRISC/CISM study materials'},
+    {name:'SANS Reading Room',url:'https://www.sans.org/reading-room/',desc:'Free research papers on security topics'},
+    {name:'CIS Controls',url:'https://www.cisecurity.org/controls',desc:'Prioritized security best practices'}
+  ]
+},
+practice:{
+  beginner:['Create a sample risk assessment for a fictional company','Map a fictional organization to NIST CSF','Draft a basic information security policy'],
+  intermediate:['Perform a gap analysis against ISO 27001','Build a risk register using FAIR methodology','Prepare a mock audit evidence package'],
+  advanced:['Design a full GRC program for a startup','Lead a tabletop exercise for incident response','Develop a vendor risk assessment framework']
+},
+projects:[
+  {name:'Security Policy Library',difficulty:'Beginner',time:'1–2 weeks',desc:'Write a set of foundational security policies (AUP, data classification, password policy). Skills: policy writing, frameworks.'},
+  {name:'Risk Assessment Template',difficulty:'Beginner',time:'3–5 days',desc:'Build a reusable risk assessment methodology. Skills: risk frameworks, documentation.'},
+  {name:'Compliance Mapping Dashboard',difficulty:'Intermediate',time:'1–2 weeks',desc:'Map controls across multiple frameworks. Skills: frameworks, spreadsheet/visualization.'},
+  {name:'Vendor Risk Questionnaire',difficulty:'Intermediate',time:'1 week',desc:'Design a third-party security assessment. Skills: vendor risk, communication.'},
+  {name:'GRC Program for a Startup',difficulty:'Advanced',time:'3–4 weeks',desc:'Build a complete governance structure. Skills: program management, strategy.'},
+  {name:'Tabletop Exercise Kit',difficulty:'Advanced',time:'2 weeks',desc:'Create incident response scenarios and facilitation guides. Skills: IR, communication.'}
+],
+certs:[
+  {name:'CompTIA Security+',level:'Beginner',difficulty:'Easy–Medium',prereqs:'None',cost:'~$392',what:'Broad security foundations — validates baseline knowledge',exp:'0–6 months'},
+  {name:'CISA (Certified Information Systems Auditor)',level:'Intermediate',difficulty:'Medium',prereqs:'5 years IS experience (substitutions available)',cost:'~$575–$760',what:'IT audit, control, and assurance',exp:'3–5 years'},
+  {name:'CRISC (Certified in Risk and Information Systems Control)',level:'Intermediate',difficulty:'Medium',prereqs:'3 years risk management experience',cost:'~$575–$760',what:'IT risk identification, assessment, and response',exp:'3+ years'},
+  {name:'CISM (Certified Information Security Manager)',level:'Intermediate–Advanced',difficulty:'Medium–Hard',prereqs:'5 years infosec experience (3 in management)',cost:'~$575–$760',what:'Security program management and governance',exp:'5+ years'},
+  {name:'CGEIT (Certified in the Governance of Enterprise IT)',level:'Advanced',difficulty:'Hard',prereqs:'5 years IT governance experience',cost:'~$575–$760',what:'Enterprise IT governance',exp:'5+ years'}
+],
+tools:['Archer (RSA)','ServiceNow GRC','OneTrust','Vanta','Drata','MetricStream','LogicGate','ZenGRC','Jira (for tracking)','Confluence (for documentation)','Power BI / Tableau (for reporting)'],
+interview:{
+  questions:['Explain the NIST Cybersecurity Framework and its five functions.','How do you assess and prioritize risks?','Describe your experience with compliance audits.','How would you handle a situation where a business unit resists a security control?','What is the difference between a policy, standard, and procedure?'],
+  practical:['Walk through how you would conduct a risk assessment','Draft a brief security policy for a given scenario','Explain how you would prepare for a SOC 2 audit','Identify compliance gaps in a fictional environment'],
+  tips:['Emphasize communication skills — GRC is about bridging tech and business.','Know at least 2–3 frameworks in depth.','Be ready to discuss real-world risk scenarios.','Show you can write clearly and concisely.']
+},
+dailyWork:['Review and update risk register entries based on new threats or changes','Meet with engineering teams to assess security controls for a new project','Prepare evidence and documentation for an upcoming audit','Draft or revise a security policy based on regulatory changes','Present security metrics dashboard to management','Research new compliance requirements affecting the organization'],
+prosCons:{
+  pros:['Less steep technical learning curve','Direct interaction with leadership and business','High demand as regulations increase globally','Excellent for career changers from business/legal backgrounds','Remote-friendly with mostly regular business hours'],
+  cons:['Can feel bureaucratic or process-heavy','Less hands-on technical work (can be a pro or con)','Audits can create high-stress periods','Requires constant awareness of changing regulations','Some find it less "exciting" than offensive/defensive work'],
+  careerGrowth:'Clear path to management and executive roles. GRC professionals often become CISOs.',
+  workLife:'Generally excellent. Regular business hours with occasional audit-season crunch.',
+  remote:'Very remote-friendly. Most work is documentation, meetings, and analysis.'
+},
+timeline:{
+  '0–3':'Learn IT basics and cybersecurity fundamentals. Start studying Security+.',
+  '3–6':'Understand major frameworks (NIST CSF, ISO 27001). Study for CISA. Practice policy writing.',
+  '6–12':'Earn Security+ and begin CISA. Build a portfolio of policies, risk assessments, and gap analyses.',
+  '1–2 Years':'Earn CISA and/or CRISC. Apply for GRC Analyst roles. Gain practical audit experience.'
+}
+},
+// ==================== 4. CLOUD SECURITY ====================
+{
+id:'cloud',icon:'☁️',name:'Cloud Security',color:'#06b6d4',
+tagline:'Secure the infrastructure powering modern business.',
+comparison:{difficulty:'Medium–High',coding:'Medium',linux:'High',networking:'Medium',cloud:'High',certs:'AWS SAA, AZ-500, CCSP',salary:'$90K–$180K',remote:'Yes',demand:'Very High',bestFor:'Infrastructure-minded professionals who love cloud platforms'},
+intro:{
+  desc:'Cloud Security professionals protect cloud-based infrastructure, applications, and data. As organizations migrate to AWS, Azure, and GCP, the demand for cloud security expertise has skyrocketed.',
+  daily:['Design and implement secure cloud architectures','Manage IAM policies, roles, and access controls','Monitor cloud environments for misconfigurations and threats','Implement encryption, network security, and logging in cloud','Automate security controls using Infrastructure as Code'],
+  who:['People with a background in IT infrastructure or networking','Those who enjoy learning cloud platforms (AWS, Azure, GCP)','Individuals who like automation and scripting','Anyone who wants one of the highest-demand specialties'],
+  skills:['Cloud platform expertise (at least one of AWS/Azure/GCP)','Identity and Access Management (IAM)','Networking (VPCs, subnets, security groups)','Infrastructure as Code (Terraform, CloudFormation)','Container security (Docker, Kubernetes)']
+},
+jobs:['Cloud Security Engineer','Cloud Security Architect','AWS/Azure/GCP Security Specialist','Cloud Compliance Analyst','DevSecOps Engineer (Cloud-focused)','Cloud Penetration Tester','SaaS Security Engineer','Identity & Access Management Engineer'],
+progression:['Junior Cloud Engineer','Cloud Security Engineer','Senior Cloud Security Engineer','Cloud Security Architect','Head of Cloud Security / CISO'],
+salary:[
+  {region:'India',entry:'₹5–10 LPA',mid:'₹15–30 LPA',senior:'₹35–65 LPA'},
+  {region:'USA',entry:'$80–100K',mid:'$120–155K',senior:'$160–200K+'},
+  {region:'Europe',entry:'€50–65K',mid:'€75–110K',senior:'€120–170K+'}
+],
+skills:{
+  beginner:['Linux and networking fundamentals','One cloud platform basics (AWS, Azure, or GCP)','Understanding of virtualization','Basic scripting (Python, Bash)','Identity and access management concepts'],
+  intermediate:['IAM policy design and least privilege','VPC design, security groups, NACLs','Cloud-native security services (GuardDuty, Security Hub, Azure Defender)','Containerization (Docker) and orchestration (Kubernetes)','Infrastructure as Code (Terraform)'],
+  advanced:['Multi-cloud security architecture','Kubernetes security (RBAC, network policies, pod security)','Cloud forensics and incident response','Zero Trust architecture in cloud','Compliance automation and policy-as-code']
+},
+roadmap:[
+  {title:'Networking & Linux',desc:'TCP/IP, DNS, subnetting, firewalls, Linux command line'},
+  {title:'Cloud Platform Basics',desc:'Choose AWS, Azure, or GCP. Learn core services (compute, storage, networking)'},
+  {title:'IAM & Access Controls',desc:'Users, groups, roles, policies, MFA, least privilege'},
+  {title:'Cloud Networking',desc:'VPCs, subnets, peering, VPNs, load balancers, WAFs'},
+  {title:'Data Security',desc:'Encryption at rest and in transit, KMS, secrets management'},
+  {title:'Logging & Monitoring',desc:'CloudTrail, CloudWatch, Azure Monitor, Security Hub'},
+  {title:'Infrastructure as Code',desc:'Terraform, CloudFormation — automate security controls'},
+  {title:'Container & Kubernetes Security',desc:'Image scanning, runtime security, RBAC, network policies'},
+  {title:'Certifications',desc:'AWS Cloud Practitioner → AWS SAA → AWS Security Specialty or AZ-500 → CCSP'},
+  {title:'Job Ready',desc:'Apply for Cloud Security Engineer roles with certifications and projects'}
+],
+resources:{
+  youtube:[
+    {name:'freeCodeCamp — AWS Certified Cloud Practitioner',url:'https://www.youtube.com/watch?v=SOTamWNgDKc'},
+    {name:'NetworkChuck — Cloud & Networking',url:'https://www.youtube.com/c/NetworkChuck'},
+    {name:'TechWorld with Nana — DevOps & Cloud',url:'https://www.youtube.com/c/TechWorldwithNana'},
+    {name:'A Cloud Guru / Pluralsight — Cloud Security',url:'https://www.youtube.com/c/AcloudGuru'},
+    {name:'AWS — Official Channel',url:'https://www.youtube.com/c/AmazonWebServices'}
+  ],
+  docs:[
+    {name:'AWS Security Documentation',url:'https://docs.aws.amazon.com/security/'},
+    {name:'Azure Security Documentation',url:'https://learn.microsoft.com/en-us/azure/security/'},
+    {name:'GCP Security Documentation',url:'https://cloud.google.com/security'},
+    {name:'CIS Benchmarks for Cloud',url:'https://www.cisecurity.org/cis-benchmarks'},
+    {name:'Terraform Documentation',url:'https://developer.hashicorp.com/terraform/docs'}
+  ],
+  websites:[
+    {name:'AWS Skill Builder',url:'https://skillbuilder.aws/',desc:'Free and paid AWS training'},
+    {name:'Microsoft Learn',url:'https://learn.microsoft.com/',desc:'Azure learning paths'},
+    {name:'Google Cloud Skills Boost',url:'https://cloudskillsboost.google/',desc:'GCP hands-on labs'},
+    {name:'Cloud Security Alliance',url:'https://cloudsecurityalliance.org/',desc:'Research, frameworks, best practices'}
+  ]
+},
+practice:{
+  beginner:['AWS Free Tier — build and secure a basic VPC','TryHackMe Cloud Security paths','Azure/GCP free tier labs'],
+  intermediate:['Set up a multi-tier architecture with security controls','Deploy and secure Kubernetes on a cloud platform','Implement logging and monitoring pipeline'],
+  advanced:['Design a multi-cloud secure architecture','Build a cloud security scanning tool','Implement policy-as-code with OPA/Kyverno']
+},
+projects:[
+  {name:'Secure Static Website on S3',difficulty:'Beginner',time:'1–2 days',desc:'Host a site with proper bucket policies, CloudFront, and HTTPS. Skills: S3, IAM, CloudFront.'},
+  {name:'VPC Security Architecture',difficulty:'Beginner',time:'3–5 days',desc:'Design a VPC with public/private subnets, NACLs, NAT gateway. Skills: cloud networking.'},
+  {name:'IAM Audit Script',difficulty:'Intermediate',time:'1 week',desc:'Audit IAM policies for overly permissive access. Skills: AWS API, Python, IAM.'},
+  {name:'Cloud Security Scanner',difficulty:'Intermediate',time:'2 weeks',desc:'Check for common cloud misconfigurations. Skills: Cloud APIs, Python, security best practices.'},
+  {name:'Secure Kubernetes Deployment',difficulty:'Advanced',time:'2–3 weeks',desc:'Deploy an app on EKS/GKE with security hardening. Skills: Kubernetes, Docker, RBAC.'},
+  {name:'Multi-Cloud Compliance Checker',difficulty:'Advanced',time:'3–4 weeks',desc:'Verify compliance across AWS and Azure. Skills: Multi-cloud, IaC, policy-as-code.'}
+],
+certs:[
+  {name:'AWS Cloud Practitioner',level:'Beginner',difficulty:'Easy',prereqs:'None',cost:'~$100',what:'AWS fundamentals and cloud concepts',exp:'0–3 months'},
+  {name:'AWS Solutions Architect Associate',level:'Intermediate',difficulty:'Medium',prereqs:'Cloud Practitioner or equivalent',cost:'~$150',what:'Designing resilient, high-performing cloud architectures',exp:'6–12 months'},
+  {name:'AWS Security Specialty',level:'Intermediate–Advanced',difficulty:'Medium–Hard',prereqs:'SAA recommended',cost:'~$300',what:'Deep AWS security: IAM, encryption, logging, incident response',exp:'1–2 years'},
+  {name:'AZ-500 (Azure Security Engineer)',level:'Intermediate',difficulty:'Medium',prereqs:'Azure fundamentals recommended',cost:'~$165',what:'Azure security: IAM, networking, data, compute',exp:'1–2 years'},
+  {name:'CCSP (Certified Cloud Security Professional)',level:'Advanced',difficulty:'Hard',prereqs:'5 years IT experience (3 in infosec, 1 in cloud)',cost:'~$599',what:'Vendor-neutral cloud security architecture and design',exp:'3–5 years'}
+],
+tools:['AWS Security Hub','AWS GuardDuty','AWS IAM Access Analyzer','Azure Security Center / Defender for Cloud','GCP Security Command Center','Terraform','CloudFormation','Prowler','ScoutSuite','Checkov','Trivy','Falco','Kubernetes RBAC','HashiCorp Vault','CloudSploit'],
+interview:{
+  questions:['Explain the AWS Shared Responsibility Model.','How would you secure an S3 bucket?','What is the principle of least privilege and how do you implement it in IAM?','Describe how you would design a secure VPC architecture.','How do you handle secrets management in the cloud?'],
+  practical:['Design a secure multi-tier architecture on a whiteboard','Identify misconfigurations in a given IAM policy','Set up logging and monitoring for a cloud environment','Write a Terraform config for a secure resource'],
+  tips:['Get hands-on with at least one cloud platform — theory is not enough.','Know the Shared Responsibility Model for your target platform.','Be prepared to discuss real incidents (S3 bucket exposures, etc.).','Understand IaC security — it is increasingly expected.']
+},
+dailyWork:['Review CloudWatch/Security Hub alerts for misconfigurations or threats','Design or review secure architecture for new cloud workloads','Implement and test IAM policies for new services','Conduct cloud security assessments using tools like Prowler or ScoutSuite','Automate security controls with Terraform or CloudFormation scripts','Collaborate with DevOps teams to integrate security into CI/CD pipelines'],
+prosCons:{
+  pros:['One of the highest-demand and highest-paid specialties','Work with cutting-edge technology','Excellent remote opportunities','Growing field with no signs of slowing down','Transferable skills across industries'],
+  cons:['Rapid pace of change — services and best practices evolve quickly','Requires broad knowledge (cloud + security + networking + automation)','Can be complex and overwhelming initially','Vendor lock-in concerns','Certifications need regular renewal'],
+  careerGrowth:'Exceptional. Cloud security architects and engineers are among the most sought-after professionals.',
+  workLife:'Generally good. Some on-call for production incidents. Many roles fully remote.',
+  remote:'Extremely remote-friendly — cloud work is inherently remote-accessible.'
+},
+timeline:{
+  '0–3':'Learn networking and Linux. Get familiar with one cloud platform (free tier). Study for Cloud Practitioner.',
+  '3–6':'Earn Cloud Practitioner or AZ-900. Start AWS SAA study. Build secure VPC projects.',
+  '6–12':'Earn AWS SAA or AZ-500. Deploy Kubernetes, implement monitoring. Start applying for junior roles.',
+  '1–2 Years':'Earn AWS Security Specialty or CCSP. Gain production experience. Specialize further.'
+}
+},
+// ==================== 5. MOBILE SECURITY ====================
+{
+id:'mobile',icon:'📱',name:'Mobile Security',color:'#f59e0b',
+tagline:'Protect the devices everyone carries in their pocket.',
+comparison:{difficulty:'Medium–High',coding:'High',linux:'Medium',networking:'Medium',cloud:'Low',certs:'GMOB, OWASP MASTG',salary:'$80K–$155K',remote:'Yes',demand:'Medium–High',bestFor:'Developers and pentesters interested in iOS and Android'},
+intro:{
+  desc:'Mobile Security professionals focus on securing mobile applications and devices. They perform mobile app penetration testing, reverse engineering, and implement secure development practices for iOS and Android platforms.',
+  daily:['Perform security assessments of iOS and Android applications','Reverse engineer mobile apps to identify vulnerabilities','Analyze mobile app traffic using proxies','Review mobile app code for security flaws','Advise development teams on secure mobile coding practices'],
+  who:['People who love mobile technology and apps','Those with app development experience','Individuals interested in reverse engineering','Anyone passionate about privacy and mobile device security'],
+  skills:['iOS and Android architecture knowledge','Mobile app development (Swift, Kotlin, Java)','Reverse engineering and binary analysis','Mobile-specific attack vectors','API security testing']
+},
+jobs:['Mobile Application Security Engineer','Mobile Pentester','iOS/Android Security Researcher','Mobile App Reverse Engineer','Mobile Threat Analyst','Secure Mobile Developer'],
+progression:['Junior Mobile Security Analyst','Mobile Security Engineer','Senior Mobile Security Researcher','Mobile Security Architect / Team Lead'],
+salary:[
+  {region:'India',entry:'₹4–9 LPA',mid:'₹12–24 LPA',senior:'₹28–50 LPA'},
+  {region:'USA',entry:'$70–95K',mid:'$100–135K',senior:'$140–170K+'},
+  {region:'Europe',entry:'€45–60K',mid:'€65–100K',senior:'€105–145K+'}
+],
+skills:{
+  beginner:['Mobile OS fundamentals (iOS and Android)','Basic mobile app development','Networking and HTTP/HTTPS','OWASP Mobile Top 10','Linux command line'],
+  intermediate:['Mobile app reverse engineering (Jadx, Hopper, Ghidra)','Traffic interception and analysis (Burp Suite, mitmproxy)','Android/iOS app internals (APK structure, IPA structure)','Dynamic analysis with Frida and Objection','Mobile malware analysis basics'],
+  advanced:['Frida scripting for advanced hooking','iOS kernel security and jailbreak analysis','Exploit development for mobile platforms','Mobile platform internals','Advanced obfuscation bypass techniques']
+},
+roadmap:[
+  {title:'Mobile OS Fundamentals',desc:'Understand iOS and Android architecture, app lifecycle, permissions model'},
+  {title:'Mobile App Development',desc:'Learn basic Swift (iOS) or Kotlin (Android) to understand app structure'},
+  {title:'Web Security Basics',desc:'HTTP, APIs, authentication — mobile apps often talk to web backends'},
+  {title:'OWASP Mobile Top 10',desc:'Learn the most common mobile app vulnerabilities'},
+  {title:'Traffic Analysis',desc:'Intercept and analyze mobile traffic with Burp Suite and mitmproxy'},
+  {title:'Static Analysis',desc:'Decompile APKs/IPAs, review source code, identify hardcoded secrets'},
+  {title:'Dynamic Analysis',desc:'Use Frida, Objection for runtime manipulation and hooking'},
+  {title:'Reverse Engineering',desc:'Advanced binary analysis with Ghidra, IDA, Hopper'},
+  {title:'Mobile Malware Analysis',desc:'Analyze malicious Android/iOS apps in sandboxed environments'},
+  {title:'Certifications & Job Ready',desc:'Pursue GMOB or build portfolio through bug bounties and CTFs'}
+],
+resources:{
+  youtube:[
+    {name:'OWASP Mobile Security',url:'https://www.youtube.com/@OWASPGlobal'},
+    {name:'LiveOverflow — Exploitation Techniques',url:'https://www.youtube.com/c/LiveOverflow'},
+    {name:'NahamSec — Mobile & Web Hacking',url:'https://www.youtube.com/c/Nahamsec'},
+    {name:'The Mobile Security Podcast',url:'https://mobilesecuritypodcast.com/'}
+  ],
+  docs:[
+    {name:'OWASP Mobile Application Security',url:'https://mas.owasp.org/'},
+    {name:'OWASP MASTG (Mobile App Security Testing Guide)',url:'https://mas.owasp.org/MASTG/'},
+    {name:'OWASP MASVS (Mobile App Security Verification Standard)',url:'https://mas.owasp.org/MASVS/'},
+    {name:'Android Developer Security Docs',url:'https://developer.android.com/topic/security'},
+    {name:'Apple Platform Security Guide',url:'https://support.apple.com/guide/security/'}
+  ],
+  websites:[
+    {name:'OWASP MAS Project',url:'https://mas.owasp.org/',desc:'Complete mobile app security framework'},
+    {name:'DIVA (Damn Insecure and Vulnerable App)',url:'https://payatu.com/diva/',desc:'Practice mobile app hacking'},
+    {name:'InsecureBankv2',url:'https://github.com/dineshshetty/Android-InsecureBankv2',desc:'Vulnerable Android app for practice'},
+    {name:'Mobexler',url:'https://mobexler.com',desc:'Mobile pentesting VM'}
+  ]
+},
+practice:{
+  beginner:['OWASP MAS project — study the testing guide','DIVA — Android vulnerable app practice','Crackmes.one — reverse engineering challenges'],
+  intermediate:['InsecureBankv2 — full Android pentest practice','MobSF (Mobile Security Framework) setup and use','Practice Frida scripting on test apps'],
+  advanced:['Bug bounty mobile targets on HackerOne/Bugcrowd','Analyze real malware samples (Koodous, VirusTotal)','CTF mobile challenges']
+},
+projects:[
+  {name:'Mobile App Traffic Analyzer',difficulty:'Beginner',time:'2–3 days',desc:'Intercept and analyze HTTP traffic from a mobile app. Skills: proxying, HTTP.'},
+  {name:'APK Decompiler & Scanner',difficulty:'Intermediate',time:'1 week',desc:'Build a tool that decompiles APKs and scans for common issues. Skills: Python, Android internals.'},
+  {name:'Frida Script Collection',difficulty:'Intermediate',time:'1–2 weeks',desc:'Create Frida scripts for common mobile testing tasks. Skills: JavaScript, Frida, mobile internals.'},
+  {name:'Mobile Malware Sandbox',difficulty:'Advanced',time:'3–4 weeks',desc:'Set up an automated analysis environment for Android malware. Skills: sandboxing, reverse engineering.'},
+  {name:'Secure Mobile App (with vulns fixed)',difficulty:'Advanced',time:'2–3 weeks',desc:'Take a vulnerable app and implement proper security controls. Skills: secure coding, crypto.'}
+],
+certs:[
+  {name:'CompTIA Security+',level:'Beginner',difficulty:'Easy–Medium',prereqs:'None',cost:'~$392',what:'Broad security foundations',exp:'0–6 months'},
+  {name:'eWPT (Web Application Penetration Tester)',level:'Intermediate',difficulty:'Medium',prereqs:'Web security basics',cost:'~$400',what:'Web app pentesting (relevant to mobile API backends)',exp:'1 year'},
+  {name:'GMOB (GIAC Mobile Device Security Analyst)',level:'Intermediate–Advanced',difficulty:'Hard',prereqs:'Mobile and network security knowledge',cost:'~$2,499',what:'Mobile device and app security assessment',exp:'2+ years'},
+  {name:'OSCP',level:'Advanced',difficulty:'Hard',prereqs:'Strong pentesting fundamentals',cost:'~$1,599+',what:'Broad penetration testing (demonstrates technical capability)',exp:'2–3 years'}
+],
+tools:['Burp Suite','mitmproxy','Frida','Objection','MobSF (Mobile Security Framework)','Jadx (Android decompiler)','APKTool','Dex2Jar','Ghidra','Hopper','Cycript','Drozer','adb (Android Debug Bridge)','Xcode Instruments','iProxy','Needle','AppMon'],
+interview:{
+  questions:['Explain the OWASP Mobile Top 10 and give examples.','How would you test an Android app for insecure data storage?','What are the differences between testing iOS and Android apps?','How does certificate pinning work and how can you bypass it?','Explain the iOS app sandboxing model.'],
+  practical:['Demonstrate static analysis of a provided APK','Identify vulnerabilities in a mobile app\'s API traffic','Bypass a simple root/jailbreak detection mechanism','Walk through your Frida hooking methodology'],
+  tips:['Build a portfolio with vulnerable apps (DIVA, InsecureBankv2).','Contribute to OWASP mobile projects.','Get mobile bug bounties on HackerOne or Bugcrowd.','Know both Android and iOS — even if you specialize in one.']
+},
+dailyWork:['Perform security assessments of mobile applications (iOS and Android)','Reverse engineer mobile apps to analyze proprietary protocols and security controls','Intercept and analyze mobile app network traffic','Collaborate with mobile developers to implement security fixes','Stay updated on mobile platform security updates and new attack techniques'],
+prosCons:{
+  pros:['Niche specialty with growing demand','Interesting blend of development and security','Good compensation due to specialized skills','Work with technology billions of people use daily','Growing bug bounty opportunities'],
+  cons:['Smaller job market compared to general pentesting or cloud security','Rapid platform changes (new OS versions, new APIs)','Requires knowledge of two distinct platforms (iOS + Android)','Can be difficult to set up testing environments','Less community content compared to web/network security'],
+  careerGrowth:'Good niche path. Can lead to Security Architect, Mobile Security Lead, or Platform Security Researcher.',
+  workLife:'Generally good. Project-based work with reasonable deadlines.',
+  remote:'Remote-friendly. Most testing can be done locally with emulators and devices.'
+},
+timeline:{
+  '0–3':'Learn mobile OS fundamentals, basic app development, and networking. Read OWASP MASTG.',
+  '3–6':'Practice with DIVA and InsecureBankv2. Learn Burp Suite for mobile. Study OWASP Mobile Top 10.',
+  '6–12':'Master Frida and static analysis. Participate in mobile bug bounties. Build portfolio projects.',
+  '1–2 Years':'Pursue GMOB or mobile-focused OSCP. Apply for mobile security roles.'
+}
+},
+// ==================== 6. NETWORK SECURITY ====================
+{
+id:'network',icon:'🌐',name:'Network Security',color:'#10b981',
+tagline:'Guard the highways that carry all digital traffic.',
+comparison:{difficulty:'Medium',coding:'Low–Med',linux:'Medium',networking:'High',cloud:'Medium',certs:'CCNA, PCNSE, Security+',salary:'$65K–$145K',remote:'Partial',demand:'High',bestFor:'Infrastructure enthusiasts who love networking'},
+intro:{
+  desc:'Network Security professionals design, implement, and manage security controls that protect an organization\'s network infrastructure. They configure firewalls, VPNs, IDS/IPS systems, and monitor network traffic for threats.',
+  daily:['Configure and manage firewalls, IDS/IPS, and VPNs','Monitor network traffic for anomalies and threats','Design secure network architectures (segmentation, zero trust)','Respond to network-based security incidents','Implement and maintain network access controls (NAC)'],
+  who:['People who love networking and infrastructure','Those with CCNA or networking certifications','Individuals who enjoy configuring hardware and network devices','Anyone who wants a stable, foundational security career'],
+  skills:['Deep networking knowledge (routing, switching, protocols)','Firewall management (Palo Alto, Fortinet, Cisco ASA)','Network monitoring and packet analysis','VPN and encryption technologies','Network architecture design']
+},
+jobs:['Network Security Engineer','Firewall Administrator','Network Security Analyst','Security Infrastructure Engineer','IDS/IPS Analyst','Network Architect (Security-focused)','Zero Trust Network Engineer','NOC/SOC Analyst (Network-focused)'],
+progression:['Junior Network Security Engineer','Network Security Engineer','Senior Network Security Engineer','Network Security Architect','Infrastructure Security Manager / Director'],
+salary:[
+  {region:'India',entry:'₹3–7 LPA',mid:'₹10–20 LPA',senior:'₹25–50 LPA'},
+  {region:'USA',entry:'$55–80K',mid:'$85–120K',senior:'$130–160K+'},
+  {region:'Europe',entry:'€35–55K',mid:'€60–90K',senior:'€95–140K+'}
+],
+skills:{
+  beginner:['OSI model and TCP/IP in depth','Subnetting, routing, and switching basics','DNS, DHCP, HTTP, and common protocols','Basic Linux and Windows networking','Wireshark basics'],
+  intermediate:['Firewall configuration and rule management','VPN technologies (IPsec, SSL/TLS, WireGuard)','IDS/IPS tuning and management','Network segmentation and VLANs','Network access control (802.1X)'],
+  advanced:['Zero Trust network architecture','Software-defined networking (SDN) security','Advanced threat detection with network analytics','Cloud networking security (VPC, NSGs)','Network forensics and incident response']
+},
+roadmap:[
+  {title:'Networking Fundamentals',desc:'OSI model, TCP/IP, subnetting, routing, switching. Study for CCNA.'},
+  {title:'Network Protocols Deep Dive',desc:'DNS, HTTP/S, SMTP, SNMP, LDAP, DHCP — understand how they work and their risks'},
+  {title:'Operating Systems',desc:'Linux and Windows networking, command-line tools'},
+  {title:'Security Fundamentals',desc:'CIA triad, common attacks, defense-in-depth'},
+  {title:'Firewall Technologies',desc:'Stateful vs stateless, NGFW concepts, rule management, Palo Alto/Fortinet'},
+  {title:'IDS/IPS',desc:'Snort, Suricata — signature-based and anomaly-based detection'},
+  {title:'VPN & Encryption',desc:'IPsec, SSL/TLS VPN, WireGuard, certificate management'},
+  {title:'Network Segmentation',desc:'VLANs, microsegmentation, DMZ architecture'},
+  {title:'Monitoring & Analysis',desc:'Wireshark, Zeek, NetFlow, SIEM integration'},
+  {title:'Certifications',desc:'CompTIA Network+ → CCNA → PCNSE or CCNP Security'}
+],
+resources:{
+  youtube:[
+    {name:'David Bombal — Networking & Cisco',url:'https://www.youtube.com/c/DavidBombal'},
+    {name:'NetworkChuck — Networking & Security',url:'https://www.youtube.com/c/NetworkChuck'},
+    {name:'Professor Messer — Network+',url:'https://www.youtube.com/c/professormesser'},
+    {name:'Keith Barker — Cisco & Security',url:'https://www.youtube.com/c/KeithBarker'},
+    {name:'Chris Greer — Wireshark & Packet Analysis',url:'https://www.youtube.com/c/ChrisGreer'}
+  ],
+  docs:[
+    {name:'Cisco Networking Academy',url:'https://www.netacad.com/'},
+    {name:'Palo Alto Networks Documentation',url:'https://docs.paloaltonetworks.com/'},
+    {name:'Wireshark Documentation',url:'https://www.wireshark.org/docs/'},
+    {name:'Snort Documentation',url:'https://www.snort.org/documents'}
+  ],
+  websites:[
+    {name:'Cisco Skills for All',url:'https://skillsforall.com/',desc:'Free Cisco networking courses'},
+    {name:'Practical Networking',url:'https://www.practicalnetworking.net/',desc:'Clear networking concepts'},
+    {name:'Wireshark Labs',url:'https://www.netresec.com/?page=PCAPfiles',desc:'Practice packet analysis'},
+    {name:'INE (free networking content)',url:'https://ine.com/',desc:'Networking and security training'}
+  ]
+},
+practice:{
+  beginner:['Packet Tracer — simulate networks','Wireshark — analyze real traffic captures','TryHackMe networking rooms'],
+  intermediate:['Build a home lab with pfSense/OPNsense firewall','Configure VPNs and network segmentation','Suricata/Snort IDS setup and tuning'],
+  advanced:['Design and secure an enterprise network architecture','Advanced Wireshark analysis with custom filters','Implement Zero Trust network in lab']
+},
+projects:[
+  {name:'Home Network Lab',difficulty:'Beginner',time:'1–2 weeks',desc:'Build a virtual network with GNS3 or Packet Tracer. Skills: routing, switching, VLANs.'},
+  {name:'Packet Analyzer Tool',difficulty:'Beginner',time:'3–5 days',desc:'Parse PCAP files with Python/Scapy. Skills: protocols, Python, packet analysis.'},
+  {name:'Firewall Rule Auditor',difficulty:'Intermediate',time:'1 week',desc:'Script to analyze and optimize firewall rules. Skills: scripting, firewall logic.'},
+  {name:'IDS Deployment',difficulty:'Intermediate',time:'1–2 weeks',desc:'Deploy Suricata with custom rules and dashboards. Skills: IDS, logging, monitoring.'},
+  {name:'Zero Trust Lab',difficulty:'Advanced',time:'2–3 weeks',desc:'Implement Zero Trust principles in a virtual environment. Skills: NAC, microsegmentation.'},
+  {name:'Network Forensics Toolkit',difficulty:'Advanced',time:'2–3 weeks',desc:'Build tools for analyzing network captures in incident scenarios. Skills: forensics, scripting.'}
+],
+certs:[
+  {name:'CompTIA Network+',level:'Beginner',difficulty:'Easy',prereqs:'None',cost:'~$358',what:'Networking fundamentals',exp:'0–6 months'},
+  {name:'CompTIA Security+',level:'Beginner',difficulty:'Easy–Medium',prereqs:'Network+ recommended',cost:'~$392',what:'Broad security foundations',exp:'0–6 months'},
+  {name:'CCNA (Cisco Certified Network Associate)',level:'Intermediate',difficulty:'Medium',prereqs:'Networking knowledge',cost:'~$330',what:'Routing, switching, network fundamentals, basic security',exp:'6–12 months'},
+  {name:'PCNSE (Palo Alto Networks Certified Network Security Engineer)',level:'Intermediate',difficulty:'Medium–Hard',prereqs:'Palo Alto platform experience',cost:'~$160',what:'Palo Alto firewall administration and security',exp:'1–2 years'},
+  {name:'CCNP Security',level:'Advanced',difficulty:'Hard',prereqs:'CCNA or equivalent + security experience',cost:'~$300 per exam',what:'Advanced Cisco security technologies',exp:'2–3 years'}
+],
+tools:['Wireshark','Nmap','Palo Alto NGFW','Fortinet FortiGate','Cisco ASA / FTD','pfSense / OPNsense','Snort','Suricata','Zeek (Bro)','NetFlow / sFlow','tcpdump','GNS3','EVE-NG','Nessus (vulnerability scanning)'],
+interview:{
+  questions:['Explain the OSI model and give an example of an attack at each layer.','How does a stateful firewall differ from a stateless firewall?','Describe how you would segment a network for security.','What is the difference between IDS and IPS?','How would you troubleshoot a VPN connectivity issue?'],
+  practical:['Analyze a PCAP file and identify suspicious traffic','Design a secure network architecture for a given scenario','Write firewall rules for a specific security requirement','Configure an IDS rule to detect a specific attack pattern'],
+  tips:['Know networking deeply — it is the foundation of everything.','Be able to draw network diagrams and explain them.','Practice with real equipment or emulators (GNS3, Packet Tracer).','Understand how security tools integrate into the network.']
+},
+dailyWork:['Monitor firewall and IDS/IPS alerts for network-based threats','Configure and update firewall rules based on security policies','Troubleshoot network connectivity and security issues','Design network segmentation for new projects or environments','Analyze packet captures for incident investigations','Collaborate with SOC and infrastructure teams on security improvements'],
+prosCons:{
+  pros:['Fundamental skills applicable across all security domains','Stable demand — networks are everywhere','Good balance of hands-on and analytical work','Clear certification path (Cisco, Palo Alto)','Essential role that is hard to outsource completely'],
+  cons:['Can involve on-call and shift work','Less "exciting" than offensive security for some','Requires keeping up with evolving network technology','Hardware-focused roles may require on-site presence','May feel limiting if you want to specialize more deeply in security'],
+  careerGrowth:'Solid. Network Security Engineer → Architect → Infrastructure Security Director. Skills transfer to cloud security.',
+  workLife:'Generally reasonable, though on-call rotations are common for critical infrastructure.',
+  remote:'Partially remote. Configuration and monitoring can be remote; hardware work requires on-site.'
+},
+timeline:{
+  '0–3':'Learn networking fundamentals (OSI, TCP/IP, subnetting). Study for Network+ or CCNA.',
+  '3–6':'Earn CCNA. Learn Wireshark and basic firewall concepts. Build home lab.',
+  '6–12':'Study firewall management (Palo Alto or Fortinet). Practice with pfSense/OPNsense. Earn Security+.',
+  '1–2 Years':'Earn PCNSE or CCNP Security. Apply for Network Security Engineer roles. Gain enterprise experience.'
+}
+},
+// ==================== 7. DIGITAL FORENSICS ====================
+{
+id:'forensics',icon:'🔍',name:'Digital Forensics',color:'#f97316',
+tagline:'Uncover digital evidence and reconstruct cyber incidents.',
+comparison:{difficulty:'Medium–High',coding:'Medium',linux:'High',networking:'Medium',cloud:'Low',certs:'GCFE, EnCE, GCFA',salary:'$65K–$145K',remote:'Partial',demand:'Medium',bestFor:'Detail-oriented investigators who love solving mysteries'},
+intro:{
+  desc:'Digital Forensics involves collecting, preserving, analyzing, and presenting digital evidence from computers, mobile devices, networks, and cloud environments. Forensic investigators reconstruct cyber incidents, support legal proceedings, and uncover what happened during breaches.',
+  daily:['Acquire forensic images from compromised systems','Analyze file systems, registry, and artifacts to reconstruct events','Examine malware samples found during investigations','Document findings in detailed forensic reports','Provide expert testimony in legal proceedings'],
+  who:['People who are methodical and detail-oriented','Those interested in law enforcement or legal investigations','Individuals who enjoy solving complex puzzles','Anyone with a strong interest in how operating systems and file systems work'],
+  skills:['Deep OS knowledge (Windows internals, Linux file systems)','Forensic imaging and tool proficiency','Malware analysis basics','Evidence handling and chain of custody','Report writing and legal awareness']
+},
+jobs:['Digital Forensics Analyst','Incident Response Analyst (Forensics-focused)','Computer Forensics Investigator','Malware Analyst (Forensics context)','eDiscovery Specialist','Law Enforcement Digital Forensics Examiner','Forensic Consultant'],
+progression:['Junior Forensic Analyst','Forensic Analyst','Senior Forensic Examiner','DFIR Manager / Director','Chief Forensic Officer / Expert Witness'],
+salary:[
+  {region:'India',entry:'₹4–8 LPA',mid:'₹10–20 LPA',senior:'₹25–45 LPA'},
+  {region:'USA',entry:'$55–80K',mid:'$85–120K',senior:'$130–160K+'},
+  {region:'Europe',entry:'€38–55K',mid:'€60–90K',senior:'€95–135K+'}
+],
+skills:{
+  beginner:['Computer hardware and OS fundamentals','Windows and Linux file systems','Basic networking and protocols','Introduction to evidence handling','Command line proficiency'],
+  intermediate:['Forensic imaging (dd, FTK Imager, EnCase)','Windows artifacts (registry, event logs, prefetch, MFT)','Linux forensics (ext4, log files, /proc)','Memory forensics with Volatility','Timeline analysis and event reconstruction'],
+  advanced:['Advanced memory forensics and malware analysis','Network forensics and packet analysis','Cloud forensics (AWS, Azure, M365)','Mobile device forensics','Expert testimony and report writing for legal proceedings']
+},
+roadmap:[
+  {title:'Computer Fundamentals',desc:'Hardware, OS internals, file systems, disk structure'},
+  {title:'Operating Systems Deep Dive',desc:'Windows registry, event logs, prefetch, MFT. Linux file systems, inodes, logs'},
+  {title:'Networking',desc:'TCP/IP, common protocols, network traffic analysis'},
+  {title:'Forensic Methodology',desc:'Evidence collection, chain of custody, write blocking, imaging'},
+  {title:'Forensic Tools',desc:'Autopsy, FTK, EnCase, Volatility, X-Ways'},
+  {title:'Windows Forensics',desc:'Registry analysis, event log parsing, browser artifacts, timeline building'},
+  {title:'Linux Forensics',desc:'ext4 analysis, journal, cron, auth logs, /proc filesystem'},
+  {title:'Memory Forensics',desc:'RAM acquisition, Volatility plugins, process analysis, rootkit detection'},
+  {title:'Network Forensics',desc:'PCAP analysis with Wireshark, NetFlow analysis, protocol reconstruction'},
+  {title:'Report Writing & Legal',desc:'Forensic report structure, chain of custody documentation, court preparation'}
+],
+resources:{
+  youtube:[
+    {name:'13Cubed — DFIR Investigations',url:'https://www.youtube.com/c/13Cubed'},
+    {name:'John Hammond — Forensics & CTFs',url:'https://www.youtube.com/c/JohnHammond010'},
+    {name:'SANS DFIR — Digital Forensics',url:'https://www.youtube.com/@SANSInstitute'},
+    {name:'Professor Messer — Security+ (DFIR sections)',url:'https://www.youtube.com/c/professormesser'}
+  ],
+  docs:[
+    {name:'Autopsy Documentation',url:'https://www.autopsy.com/documentation/'},
+    {name:'Volatility Documentation',url:'https://volatility3.readthedocs.io/'},
+    {name:'SANS DFIR Posters (Free)',url:'https://www.sans.org/posters/'},
+    {name:'NIST SP 800-86 — Guide to Integrating Forensic Techniques',url:'https://csrc.nist.gov/publications/detail/sp/800-86/final'}
+  ],
+  websites:[
+    {name:'CyberDefenders',url:'https://cyberdefenders.org',desc:'Blue team and forensics CTFs'},
+    {name:'Blue Team Labs Online',url:'https://blueteamlabs.online',desc:'Forensics and IR challenges'},
+    {name:'DFIR.training',url:'https://www.dfir.training/',desc:'Curated DFIR resources'},
+    {name:'NIST CFReDS',url:'https://www.cfreds.nist.gov/',desc:'Forensic test images for practice'}
+  ]
+},
+practice:{
+  beginner:['Autopsy — analyze provided disk images','CyberDefenders — beginner forensics challenges','SANS Christmas Challenge (annual)'],
+  intermediate:['Volatility memory analysis challenges','Blue Team Labs Online — forensics scenarios','Build timeline from provided evidence'],
+  advanced:['Real-world breach investigation scenarios','Cloud forensics challenges (M365, AWS)','Mobile forensics with Cellebrite/XRY concepts']
+},
+projects:[
+  {name:'Disk Image Analyzer',difficulty:'Beginner',time:'3–5 days',desc:'Script to extract metadata and artifacts from disk images. Skills: file systems, Python.'},
+  {name:'Windows Artifact Parser',difficulty:'Intermediate',time:'1–2 weeks',desc:'Parse registry hives, event logs, and prefetch files. Skills: Windows internals, Python.'},
+  {name:'Memory Forensics Toolkit',difficulty:'Intermediate',time:'1–2 weeks',desc:'Build a workflow using Volatility for memory analysis. Skills: memory forensics, malware analysis.'},
+  {name:'Timeline Builder',difficulty:'Advanced',time:'2–3 weeks',desc:'Create unified timelines from multiple evidence sources. Skills: correlation, visualization.'},
+  {name:'Automated IR Triage Tool',difficulty:'Advanced',time:'3–4 weeks',desc:'Build a tool that automates initial forensic triage. Skills: scripting, forensics, automation.'}
+],
+certs:[
+  {name:'CompTIA Security+',level:'Beginner',difficulty:'Easy–Medium',prereqs:'None',cost:'~$392',what:'Broad security foundations',exp:'0–6 months'},
+  {name:'CHFI (Computer Hacking Forensic Investigator)',level:'Intermediate',difficulty:'Medium',prereqs:'Security knowledge',cost:'~$750+',what:'Forensic investigation techniques and tools',exp:'1–2 years'},
+  {name:'GCFE (GIAC Certified Forensic Examiner)',level:'Intermediate',difficulty:'Medium–Hard',prereqs:'Windows forensics knowledge',cost:'~$2,499',what:'Windows forensic analysis and artifact examination',exp:'2+ years'},
+  {name:'GCFA (GIAC Certified Forensic Analyst)',level:'Advanced',difficulty:'Hard',prereqs:'DFIR experience',cost:'~$2,499',what:'Advanced incident response and digital forensics',exp:'2–3 years'},
+  {name:'EnCE (EnCase Certified Examiner)',level:'Advanced',difficulty:'Hard',prereqs:'EnCase experience',cost:'Varies',what:'EnCase forensic tool proficiency',exp:'2+ years'}
+],
+tools:['Autopsy / The Sleuth Kit','FTK (Forensic Toolkit)','EnCase','Volatility','X-Ways Forensics','Wireshark','KAPE','Eric Zimmerman Tools','Plaso/log2timeline','Cellebrite (mobile)','Magnet AXIOM','Velociraptor','Arsenal Image Mounter','Registry Explorer'],
+interview:{
+  questions:['Walk me through your forensic investigation process from receiving a device to final report.','What artifacts would you examine to determine if a user accessed a specific file?','Explain the chain of custody and why it matters.','How would you investigate a potential insider threat?','What is the difference between live and dead forensics?'],
+  practical:['Analyze a provided disk image and answer specific questions','Examine memory dump for indicators of compromise','Reconstruct a timeline of events from multiple artifacts','Write a brief forensic report based on your findings'],
+  tips:['Practice with real forensic images from NIST CFReDS and challenge sites.','Be meticulous about chain of custody documentation.','Know Windows artifacts deeply — most investigations involve Windows.','Be able to explain technical findings to non-technical audiences.']
+},
+dailyWork:['Receive and document evidence following chain of custody procedures','Create forensic images of storage media using write blockers','Analyze file systems, registry, and OS artifacts to reconstruct user activity','Examine memory dumps for running processes, injected code, or rootkits','Build event timelines correlating multiple evidence sources','Write detailed forensic reports suitable for legal proceedings'],
+prosCons:{
+  pros:['Intellectually stimulating investigative work','Critical role in incident response and legal proceedings','Deep technical skill development','Growing demand due to increasing cybercrime','Opportunities in law enforcement, consulting, and corporate roles'],
+  cons:['Can involve disturbing content (in law enforcement contexts)','Evidence handling procedures are strict and stressful','May require court testimony','Cases can have tight deadlines (legal proceedings)','Some roles require on-site evidence collection'],
+  careerGrowth:'Good. Forensic Analyst → Senior Examiner → DFIR Manager → Expert Witness / Director.',
+  workLife:'Generally reasonable, though major incidents create urgent timelines. Some on-call may be required.',
+  remote:'Partially. Analysis can be remote, but evidence acquisition often requires on-site work.'
+},
+timeline:{
+  '0–3':'Learn OS fundamentals, file systems, and networking. Study Security+.',
+  '3–6':'Practice with Autopsy and basic disk image analysis. Learn Windows artifacts.',
+  '6–12':'Study memory forensics with Volatility. Work through CyberDefenders challenges. Earn CHFI or start GCFE.',
+  '1–2 Years':'Earn GCFE or GCFA. Build portfolio of forensic analysis work. Apply for DFIR roles.'
+}
+},
+// ==================== 8. THREAT INTELLIGENCE ====================
+{
+id:'threat-intel',icon:'🧠',name:'Threat Intelligence',color:'#ec4899',
+tagline:'Understand adversaries to anticipate and prevent attacks.',
+comparison:{difficulty:'Medium–High',coding:'Medium',linux:'Medium',networking:'Medium',cloud:'Low',certs:'GCTI, CTIA, Security+',salary:'$70K–$150K',remote:'Yes',demand:'Medium–High',bestFor:'Analytical researchers who think strategically about threats'},
+intro:{
+  desc:'Threat Intelligence professionals collect, analyze, and disseminate information about cyber threats. They profile threat actors, track campaigns, analyze malware families, and provide actionable intelligence to help organizations make informed security decisions.',
+  daily:['Monitor threat feeds, dark web forums, and OSINT sources','Analyze indicators of compromise (IOCs) and tactics, techniques, and procedures (TTPs)','Produce threat intelligence reports for different audiences','Track threat actor groups and their campaigns','Brief stakeholders on relevant threats and risk implications'],
+  who:['People who enjoy research and analysis','Those with a background in intelligence, journalism, or analysis','Individuals who think strategically and can connect dots','Anyone interested in geopolitics, threat actors, and the threat landscape'],
+  skills:['OSINT (Open Source Intelligence) collection and analysis','MITRE ATT&CK framework proficiency','Malware analysis basics','Data analysis and visualization','Excellent written and verbal communication']
+},
+jobs:['Threat Intelligence Analyst','Cyber Threat Analyst','Threat Hunter (Intel-focused)','Malware Intelligence Analyst','OSINT Specialist','Threat Intelligence Engineer','CTI Team Lead','Strategic Threat Advisor'],
+progression:['Junior Threat Intel Analyst','Threat Intelligence Analyst','Senior Threat Intel Analyst / Threat Hunter','CTI Manager / Director of Threat Intelligence'],
+salary:[
+  {region:'India',entry:'₹4–9 LPA',mid:'₹12–24 LPA',senior:'₹28–50 LPA'},
+  {region:'USA',entry:'$60–85K',mid:'$95–130K',senior:'$135–165K+'},
+  {region:'Europe',entry:'€40–60K',mid:'€65–100K',senior:'€105–145K+'}
+],
+skills:{
+  beginner:['Cybersecurity fundamentals','Networking and protocol knowledge','OSINT basics (Google dorking, Shodan, social media analysis)','MITRE ATT&CK framework','Technical writing'],
+  intermediate:['Malware analysis basics (static and dynamic)','Threat modeling and risk assessment','Diamond Model and Kill Chain analysis','Threat intelligence platforms (MISP, OpenCTI)','Scripting for automation (Python)'],
+  advanced:['Advanced malware reverse engineering','Dark web intelligence collection','Strategic intelligence production','Threat actor profiling and attribution','Intelligence-driven security operations']
+},
+roadmap:[
+  {title:'Cybersecurity Fundamentals',desc:'Understand attacks, defenses, networking, and OS basics'},
+  {title:'OSINT Skills',desc:'Google dorking, Shodan, theHarvester, Maltego, social media analysis'},
+  {title:'MITRE ATT&CK Deep Dive',desc:'Map adversary behaviors to ATT&CK techniques and sub-techniques'},
+  {title:'Threat Landscape',desc:'Study major threat actors, APT groups, ransomware families, and campaigns'},
+  {title:'Malware Analysis Basics',desc:'Static analysis, dynamic analysis in sandboxes, IOC extraction'},
+  {title:'Threat Intelligence Frameworks',desc:'Diamond Model, Kill Chain, MITRE ATT&CK integration'},
+  {title:'TI Platforms & Tools',desc:'MISP, OpenCTI, VirusTotal, Recorded Future (conceptual)'},
+  {title:'Reporting & Communication',desc:'Write intelligence reports for tactical, operational, and strategic audiences'},
+  {title:'Certifications',desc:'Security+ → GCTI or CTIA'},
+  {title:'Job Ready',desc:'Apply for Threat Intelligence Analyst roles with portfolio and certifications'}
+],
+resources:{
+  youtube:[
+    {name:'SANS Threat Intelligence Webcasts',url:'https://www.youtube.com/@SANSInstitute'},
+    {name:'John Hammond — Threat Intel & Malware',url:'https://www.youtube.com/c/JohnHammond010'},
+    {name:'Black Hills InfoSec — Webcasts',url:'https://www.youtube.com/c/BlackHillsInformationSecurity'},
+    {name:'Tradecraft — Threat Intelligence',url:'https://www.youtube.com/@TradecraftSEC'}
+  ],
+  docs:[
+    {name:'MITRE ATT&CK',url:'https://attack.mitre.org/'},
+    {name:'MISP Documentation',url:'https://www.misp-project.org/documentation/'},
+    {name:'OpenCTI Documentation',url:'https://docs.opencti.io/'},
+    {name:'CISA Threat Advisories',url:'https://www.cisa.gov/news-events/cybersecurity-advisories'},
+    {name:'AlienVault OTX',url:'https://otx.alienvault.com/'}
+  ],
+  websites:[
+    {name:'VirusTotal',url:'https://www.virustotal.com/',desc:'File and URL scanning'},
+    {name:'Shodan',url:'https://www.shodan.io/',desc:'Internet-connected device search engine'},
+    {name:'MalwareBazaar',url:'https://bazaar.abuse.ch/',desc:'Malware sample sharing'},
+    {name:'ThreatFox',url:'https://threatfox.abuse.ch/',desc:'IOC sharing platform'},
+    {name:'MITRE ATT&CK Navigator',url:'https://mitre-attack.github.io/attack-navigator/',desc:'Visualize ATT&CK coverage'}
+  ]
+},
+practice:{
+  beginner:['MITRE ATT&CK — map a known attack campaign','OSINT challenges (Trace Labs, TryHackMe OSINT rooms)','Analyze phishing emails and extract IOCs'],
+  intermediate:['Build a MISP instance and populate with real IOCs','Track a threat actor group and produce a profile','Analyze malware samples from MalwareBazaar'],
+  advanced:['Produce a full threat landscape report for a fictional organization','Contribute to open-source threat intelligence','Participate in Threat Intelligence CTFs']
+},
+projects:[
+  {name:'OSINT Investigation',difficulty:'Beginner',time:'2–3 days',desc:'Conduct a thorough OSINT investigation on a target. Skills: OSINT tools, analysis.'},
+  {name:'Threat Actor Profile',difficulty:'Intermediate',time:'1–2 weeks',desc:'Research and document a known APT group. Skills: research, MITRE ATT&CK, writing.'},
+  {name:'IOC Collection Pipeline',difficulty:'Intermediate',time:'1–2 weeks',desc:'Automate IOC collection from multiple feeds. Skills: Python, APIs, data processing.'},
+  {name:'Threat Intelligence Dashboard',difficulty:'Advanced',time:'2–3 weeks',desc:'Build a TI dashboard with MISP and visualization. Skills: data visualization, TI platforms.'},
+  {name:'Campaign Analysis Report',difficulty:'Advanced',time:'2–3 weeks',desc:'Analyze a multi-stage attack campaign with full Diamond Model mapping. Skills: analysis, frameworks.'}
+],
+certs:[
+  {name:'CompTIA Security+',level:'Beginner',difficulty:'Easy–Medium',prereqs:'None',cost:'~$392',what:'Broad security foundations',exp:'0–6 months'},
+  {name:'CTIA (Certified Threat Intelligence Analyst)',level:'Intermediate',difficulty:'Medium',prereqs:'Security knowledge',cost:'~$400+',what:'Threat intelligence lifecycle and methodology',exp:'1–2 years'},
+  {name:'GCTI (GIAC Cyber Threat Intelligence)',level:'Intermediate–Advanced',difficulty:'Hard',prereqs:'TI knowledge and experience',cost:'~$2,499',what:'Advanced threat intelligence analysis and production',exp:'2+ years'},
+  {name:'GREM (GIAC Reverse Engineering Malware)',level:'Advanced',difficulty:'Hard',prereqs:'Malware analysis experience',cost:'~$2,499',what:'Advanced malware reverse engineering',exp:'2–3 years'}
+],
+tools:['MITRE ATT&CK Navigator','MISP (Malware Information Sharing Platform)','OpenCTI','VirusTotal','Maltego','Shodan','theHarvester','SpiderFoot','YARA','CAPE Sandbox','Any.Run','Recorded Future (commercial)','ThreatConnect (commercial)','Splunk (for IOC matching)'],
+interview:{
+  questions:['Explain the difference between tactical, operational, and strategic threat intelligence.','How do you assess the credibility and relevance of a threat intelligence source?','Walk me through how you would profile a threat actor group.','What is the Diamond Model of Intrusion Analysis?','How would you operationalize threat intelligence for a SOC team?'],
+  practical:['Analyze a set of IOCs and determine what threat they indicate','Map an attack scenario to MITRE ATT&CK','Write a threat briefing for a specific audience','Evaluate the quality of threat intelligence from a given source'],
+  tips:['Demonstrate analytical thinking — show how you connect dots.','Know MITRE ATT&CK inside and out.','Show you can communicate to both technical and executive audiences.','Build a public portfolio of threat research and analysis.']
+},
+dailyWork:['Monitor threat feeds, dark web sources, and OSINT platforms for relevant intelligence','Analyze new IOCs and map them to known threat actors or campaigns','Write tactical intelligence bulletins for SOC and IR teams','Produce strategic threat reports for leadership','Brief security teams on emerging threats and recommended defenses','Maintain and update threat intelligence platform data'],
+prosCons:{
+  pros:['Intellectually stimulating research and analysis work','Directly contributes to organizational security strategy','Blend of technical and strategic work','Growing field as organizations recognize the value of TI','Opportunities to work with government and law enforcement'],
+  cons:['Can be difficult to measure ROI of threat intelligence','Requires strong communication skills — technical alone is not enough','Intelligence can be ambiguous and uncertain','May involve monitoring disturbing sources (dark web)','Smaller job market compared to defensive or offensive roles'],
+  careerGrowth:'Good path to strategic security leadership. TI Analyst → CTI Manager → Threat Intelligence Director → CISO advisory.',
+  workLife:'Generally good. Regular hours with occasional urgent briefings during active incidents.',
+  remote:'Very remote-friendly. Most intelligence work is research and analysis from a computer.'
+},
+timeline:{
+  '0–3':'Learn cybersecurity fundamentals and OSINT basics. Study MITRE ATT&CK framework.',
+  '3–6':'Practice OSINT tools, analyze phishing campaigns, and map attacks to ATT&CK.',
+  '6–12':'Learn malware analysis basics. Set up MISP or OpenCTI. Build threat actor profiles. Earn Security+.',
+  '1–2 Years':'Earn GCTI or CTIA. Produce professional-quality intelligence reports. Apply for TI Analyst roles.'
+}
+},
+// ==================== 9. APPLICATION SECURITY ====================
+{
+id:'appsec',icon:'🛡️',name:'Application Security',color:'#14b8a6',
+tagline:'Build security into software from the ground up.',
+comparison:{difficulty:'Medium–High',coding:'High',linux:'Medium',networking:'Medium',cloud:'Medium',certs:'GWEB, OSWE, CSSLP',salary:'$85K–$170K',remote:'Yes',demand:'High',bestFor:'Developers who want to make software secure by design'},
+intro:{
+  desc:'Application Security (AppSec) professionals ensure software is designed, developed, and deployed securely. They perform code reviews, integrate security into CI/CD pipelines, conduct threat modeling, and help developers write secure code.',
+  daily:['Perform security code reviews (manual and tool-assisted)','Integrate SAST, DAST, and SCA tools into CI/CD pipelines','Conduct threat modeling sessions with development teams','Triage findings from security scanners and prioritize fixes','Provide security guidance and training to developers'],
+  who:['People with software development experience','Those who enjoy reading and understanding code','Individuals who want to prevent vulnerabilities at the source','Anyone who likes both security and software engineering'],
+  skills:['Strong programming skills (multiple languages)','Understanding of web application architecture','Knowledge of OWASP Top 10 and CWE','Secure coding practices','CI/CD and DevOps tooling knowledge']
+},
+jobs:['Application Security Engineer','Security Code Reviewer','Secure Software Architect','SAST/DAST Engineer','Product Security Engineer','Web Application Security Specialist','Application Security Consultant'],
+progression:['Junior AppSec Engineer','Application Security Engineer','Senior AppSec Engineer / Product Security Lead','Application Security Architect / Director of Product Security'],
+salary:[
+  {region:'India',entry:'₹5–10 LPA',mid:'₹14–28 LPA',senior:'₹32–60 LPA'},
+  {region:'USA',entry:'$75–100K',mid:'$110–145K',senior:'$150–190K+'},
+  {region:'Europe',entry:'€45–65K',mid:'€70–110K',senior:'€115–160K+'}
+],
+skills:{
+  beginner:['At least one programming language (Python, Java, JavaScript)','Web application basics (HTML, CSS, HTTP, REST APIs)','OWASP Top 10 vulnerabilities','Basic understanding of databases (SQL)','Version control (Git)'],
+  intermediate:['Secure coding practices (input validation, output encoding, authentication)','Security code review methodology','SAST/DAST tools (Semgrep, SonarQube, OWASP ZAP)','Dependency scanning (Snyk, Dependabot)','Threat modeling (STRIDE, DREAD)'],
+  advanced:['Advanced vulnerability research','Custom rule writing for SAST tools','API security architecture','Authentication protocol design (OAuth 2.0, OIDC, SAML)','Supply chain security']
+},
+roadmap:[
+  {title:'Programming Proficiency',desc:'Master at least one language. Understand web frameworks, databases, APIs.'},
+  {title:'Web Application Architecture',desc:'Frontend, backend, databases, APIs, authentication, sessions'},
+  {title:'OWASP Top 10',desc:'Deeply understand each vulnerability class and how to prevent them'},
+  {title:'Secure Coding',desc:'Input validation, parameterized queries, output encoding, proper auth design'},
+  {title:'Security Testing Tools',desc:'OWASP ZAP, Burp Suite, Semgrep, SonarQube, dependency scanners'},
+  {title:'Code Review',desc:'Manual code review methodology, common vulnerability patterns'},
+  {title:'Threat Modeling',desc:'STRIDE, attack trees, architectural risk analysis'},
+  {title:'CI/CD Security Integration',desc:'Integrate SAST, DAST, SCA into pipelines (GitHub Actions, Jenkins)'},
+  {title:'API Security',desc:'REST/GraphQL security, rate limiting, authentication, authorization'},
+  {title:'Certifications & Job Ready',desc:'OSWE, GWEB, or CSSLP. Apply for AppSec Engineer roles.'}
+],
+resources:{
+  youtube:[
+    {name:'LiveOverflow — Web Security',url:'https://www.youtube.com/c/LiveOverflow'},
+    {name:'OWASP Foundation',url:'https://www.youtube.com/@OWASPGlobal'},
+    {name:'PwnFunction — Web Security Animations',url:'https://www.youtube.com/c/PwnFunction'},
+    {name:'Computerphile — Security Concepts',url:'https://www.youtube.com/c/Computerphile'}
+  ],
+  docs:[
+    {name:'OWASP Top 10',url:'https://owasp.org/www-project-top-ten/'},
+    {name:'OWASP Application Security Verification Standard (ASVS)',url:'https://owasp.org/www-project-application-security-verification-standard/'},
+    {name:'OWASP Cheat Sheet Series',url:'https://cheatsheetseries.owasp.org/'},
+    {name:'PortSwigger Web Security Academy',url:'https://portswigger.net/web-security'},
+    {name:'CWE (Common Weakness Enumeration)',url:'https://cwe.mitre.org/'}
+  ],
+  websites:[
+    {name:'PortSwigger Web Security Academy',url:'https://portswigger.net/web-security',desc:'Best free web security training'},
+    {name:'OWASP WebGoat',url:'https://owasp.org/www-project-webgoat/',desc:'Intentionally vulnerable app for learning'},
+    {name:'OWASP Juice Shop',url:'https://owasp.org/www-project-juice-shop/',desc:'Modern vulnerable web app'},
+    {name:'Secure Code Warrior',url:'https://www.securecodewarrior.com/',desc:'Secure coding training platform'}
+  ]
+},
+practice:{
+  beginner:['PortSwigger Academy — all beginner labs','OWASP Juice Shop — solve all challenges','OWASP WebGoat — guided lessons'],
+  intermediate:['PortSwigger Academy — advanced labs','Write Semgrep rules to detect vulnerability patterns','Conduct code review on open-source projects'],
+  advanced:['Bug bounty on HackerOne/Bugcrowd (web targets)','OSWE-style lab practice','Design secure authentication systems from scratch']
+},
+projects:[
+  {name:'Vulnerable Web App',difficulty:'Beginner',time:'1–2 weeks',desc:'Build a web app with intentional vulnerabilities and document fixes. Skills: web dev, OWASP Top 10.'},
+  {name:'SAST Rule Library',difficulty:'Intermediate',time:'2–3 weeks',desc:'Write Semgrep/custom rules for common vulnerability patterns. Skills: regex, AST analysis.'},
+  {name:'API Security Scanner',difficulty:'Intermediate',time:'2 weeks',desc:'Build a tool that tests APIs for common security issues. Skills: APIs, Python, security testing.'},
+  {name:'Secure Authentication Module',difficulty:'Advanced',time:'2–3 weeks',desc:'Implement a production-grade auth system. Skills: crypto, session management, OAuth.'},
+  {name:'Supply Chain Security Checker',difficulty:'Advanced',time:'3–4 weeks',desc:'Analyze dependencies for vulnerabilities and malicious packages. Skills: package ecosystems, automation.'}
+],
+certs:[
+  {name:'CompTIA Security+',level:'Beginner',difficulty:'Easy–Medium',prereqs:'None',cost:'~$392',what:'Broad security foundations',exp:'0–6 months'},
+  {name:'GWEB (GIAC Web Application Penetration Tester)',level:'Intermediate',difficulty:'Medium–Hard',prereqs:'Web security knowledge',cost:'~$2,499',what:'Web application security testing and exploitation',exp:'1–2 years'},
+  {name:'OSWE (Offensive Security Web Expert)',level:'Advanced',difficulty:'Hard',prereqs:'Strong web app pentesting skills',cost:'~$1,599+',what:'White-box web app exploitation — find and exploit vulns in source code',exp:'2–3 years'},
+  {name:'CSSLP (Certified Secure Software Lifecycle Professional)',level:'Advanced',difficulty:'Hard',prereqs:'4 years SDLC experience',cost:'~$599',what:'Secure software development lifecycle',exp:'4+ years'}
+],
+tools:['Burp Suite','OWASP ZAP','Semgrep','SonarQube','Snyk','Dependabot','Checkmarx (commercial)','Fortify (commercial)','OWASP Dependency-Track','Gitleaks (secret scanning)','TruffleHog','CodeQL','npm audit / pip audit','OWASP Amass'],
+interview:{
+  questions:['Explain the OWASP Top 10 and how to prevent each vulnerability.','How would you conduct a threat model for a new application?','Describe your approach to a security code review.','What is the difference between SAST, DAST, and SCA?','How would you design a secure authentication system?'],
+  practical:['Review a code snippet and identify security issues','Perform a security assessment of a web application','Write a SAST rule to detect a specific vulnerability class','Design a threat model for a given application architecture'],
+  tips:['Know OWASP Top 10 and ASVS in depth.','Practice code review on open-source projects.','Be able to write code, not just find bugs in it.','Show you can work with developers, not against them.']
+},
+dailyWork:['Review pull requests for security issues before code is merged','Run and triage SAST/DAST scans in CI/CD pipeline','Conduct threat modeling sessions with development teams','Write secure coding guidelines and create reusable security components','Perform manual security code reviews for critical components','Stay updated on new vulnerability classes and secure coding techniques'],
+prosCons:{
+  pros:['Prevent vulnerabilities at the source — highest leverage security work','Work closely with development teams','Strong demand as software eats the world','Blend of development and security skills','Excellent compensation, especially at tech companies'],
+  cons:['Can feel like "the security police" if not approached well','Requires strong development skills — steep learning curve for non-developers','Tool output can be noisy and requires constant tuning','Must balance security with development velocity','Rapidly evolving technology stacks to keep up with'],
+  careerGrowth:'Excellent. AppSec Engineer → Product Security Lead → Director of Product Security → VP Security / CISO.',
+  workLife:'Generally good. Aligned with development team schedules. Occasional security reviews under deadline.',
+  remote:'Very remote-friendly. Code review and tool configuration are inherently remote work.'
+},
+timeline:{
+  '0–3':'Strengthen programming skills. Learn web application architecture. Study OWASP Top 10.',
+  '3–6':'Complete PortSwigger Academy. Practice code review on open-source. Learn Semgrep.',
+  '6–12':'Integrate SAST/DAST into a CI/CD project. Build AppSec portfolio. Start applying for roles.',
+  '1–2 Years':'Pursue OSWE or GWEB. Gain enterprise AppSec experience. Specialize in APIs or auth.'
+}
+},
+// ==================== 10. DEVSECOPS ====================
+{
+id:'devsecops',icon:'⚙️',name:'DevSecOps',color:'#6366f1',
+tagline:'Automate security into every step of the software delivery pipeline.',
+comparison:{difficulty:'Medium–High',coding:'High',linux:'High',networking:'Medium',cloud:'High',certs:'CKS, AWS Security, Docker',salary:'$90K–$175K',remote:'Yes',demand:'Very High',bestFor:'DevOps engineers who want to add security expertise'},
+intro:{
+  desc:'DevSecOps integrates security practices into DevOps workflows. Professionals in this field automate security testing, manage container and infrastructure security, implement secrets management, and ensure security keeps pace with rapid development cycles.',
+  daily:['Integrate security tools into CI/CD pipelines','Manage container image scanning and runtime security','Implement and manage secrets (vault, encryption keys)','Define and enforce security policies as code','Monitor and respond to security events in production infrastructure'],
+  who:['People with DevOps or SRE backgrounds','Those who love automation and infrastructure','Individuals comfortable with CI/CD, containers, and cloud','Anyone who wants to make security seamless and automated'],
+  skills:['CI/CD pipeline design and management','Container technologies (Docker, Kubernetes)','Infrastructure as Code (Terraform, Ansible)','Cloud platforms (AWS, Azure, GCP)','Scripting and programming (Python, Go, Bash)'],
+},
+jobs:['DevSecOps Engineer','Security Automation Engineer','Platform Security Engineer','SRE (Security-focused)','Cloud Security Engineer (DevSecOps)','Infrastructure Security Engineer','Container Security Specialist'],
+progression:['Junior DevSecOps / DevOps Engineer','DevSecOps Engineer','Senior DevSecOps Engineer','Platform Security Architect','Head of Security Engineering'],
+salary:[
+  {region:'India',entry:'₹5–10 LPA',mid:'₹15–30 LPA',senior:'₹35–65 LPA'},
+  {region:'USA',entry:'$80–105K',mid:'$120–155K',senior:'$160–200K+'},
+  {region:'Europe',entry:'€50–70K',mid:'€75–115K',senior:'€120–170K+'}
+],
+skills:{
+  beginner:['Linux administration','Networking fundamentals','Basic scripting (Bash, Python)','Version control (Git)','Basic understanding of CI/CD concepts'],
+  intermediate:['Docker and container security','Kubernetes administration and security','Terraform or CloudFormation','CI/CD platform management (GitHub Actions, GitLab CI, Jenkins)','Secrets management (HashiCorp Vault)'],
+  advanced:['Policy as Code (OPA, Kyverno, Sentinel)','Service mesh security (Istio, Linkerd)','Supply chain security (Sigstore, SBOMs)','Advanced Kubernetes security (admission controllers, runtime)','GitOps and infrastructure security automation']
+},
+roadmap:[
+  {title:'Linux & Networking',desc:'System administration, networking, command-line proficiency'},
+  {title:'Programming & Scripting',desc:'Python, Bash, Go — essential for automation'},
+  {title:'Version Control & CI/CD',desc:'Git, GitHub/GitLab, Jenkins, GitHub Actions, pipeline design'},
+  {title:'Docker & Containers',desc:'Container fundamentals, image building, security best practices'},
+  {title:'Kubernetes',desc:'Cluster management, deployments, services, RBAC, network policies'},
+  {title:'Infrastructure as Code',desc:'Terraform, Ansible — automate infrastructure provisioning and security'},
+  {title:'Security Tools Integration',desc:'SAST, DAST, SCA, container scanning in pipelines'},
+  {title:'Secrets Management',desc:'HashiCorp Vault, AWS Secrets Manager, sealed secrets'},
+  {title:'Policy as Code',desc:'OPA, Kyverno, Sentinel — enforce security policies automatically'},
+  {title:'Supply Chain Security',desc:'SBOMs, Sigstore, dependency verification, image signing'}
+],
+resources:{
+  youtube:[
+    {name:'TechWorld with Nana — DevOps & K8s',url:'https://www.youtube.com/c/TechWorldwithNana'},
+    {name:'NetworkChuck — Docker & Linux',url:'https://www.youtube.com/c/NetworkChuck'},
+    {name:'That DevOps Guy — DevSecOps',url:'https://www.youtube.com/c/DevOpsToolkit'},
+    {name:'Fireship — Modern Dev Concepts',url:'https://www.youtube.com/c/Fireship'},
+    {name:'freeCodeCamp — DevOps Courses',url:'https://www.youtube.com/c/Freecodecamp'}
+  ],
+  docs:[
+    {name:'Docker Documentation',url:'https://docs.docker.com/'},
+    {name:'Kubernetes Documentation',url:'https://kubernetes.io/docs/'},
+    {name:'Terraform Documentation',url:'https://developer.hashicorp.com/terraform/docs'},
+    {name:'HashiCorp Vault Documentation',url:'https://developer.hashicorp.com/vault/docs'},
+    {name:'OWASP DevSecOps Guideline',url:'https://owasp.org/www-project-devsecops-guideline/'}
+  ],
+  websites:[
+    {name:'KodeKloud',url:'https://kodekloud.com/',desc:'Hands-on DevOps and K8s labs'},
+    {name:'KillerCoda',url:'https://killercoda.com/',desc:'Interactive Kubernetes scenarios'},
+    {name:'Katacoda (archived scenarios)',url:'https://www.katacoda.com/',desc:'Interactive learning environments'},
+    {name:'DevSecOps.org',url:'https://www.devsecops.org/',desc:'Community and best practices'}
+  ]
+},
+practice:{
+  beginner:['Docker getting started labs','Set up a basic CI/CD pipeline with GitHub Actions','TryHackMe DevSecOps rooms'],
+  intermediate:['Deploy and secure a Kubernetes cluster','Integrate security scanning into a real CI/CD pipeline','Set up HashiCorp Vault for secrets management'],
+  advanced:['Implement full GitOps pipeline with security checks','Build a policy-as-code admission controller','Create an SBOM generation and vulnerability tracking system']
+},
+projects:[
+  {name:'Secure CI/CD Pipeline',difficulty:'Beginner',time:'3–5 days',desc:'Build a GitHub Actions pipeline with security scanning stages. Skills: CI/CD, SAST, SCA.'},
+  {name:'Container Security Scanner',difficulty:'Intermediate',time:'1–2 weeks',desc:'Automate Docker image scanning in CI. Skills: Docker, Trivy, scripting.'},
+  {name:'Terraform Security Module',difficulty:'Intermediate',time:'1–2 weeks',desc:'Create a reusable Terraform module with security best practices. Skills: IaC, Terraform.'},
+  {name:'Kubernetes Security Hardening',difficulty:'Advanced',time:'2–3 weeks',desc:'Deploy and harden a K8s cluster with policies, network policies, and monitoring. Skills: K8s, security.'},
+  {name:'Supply Chain Security Pipeline',difficulty:'Advanced',time:'3–4 weeks',desc:'Implement image signing, SBOM generation, and dependency verification. Skills: supply chain, Sigstore.'}
+],
+certs:[
+  {name:'Docker Certified Associate',level:'Beginner',difficulty:'Easy–Medium',prereqs:'Docker experience',cost:'~$195',what:'Docker container management',exp:'6 months'},
+  {name:'CKA (Certified Kubernetes Administrator)',level:'Intermediate',difficulty:'Medium–Hard',prereqs:'Kubernetes experience',cost:'~$395',what:'Kubernetes cluster administration',exp:'1 year'},
+  {name:'CKS (Certified Kubernetes Security Specialist)',level:'Advanced',difficulty:'Hard',prereqs:'CKA required',cost:'~$395',what:'Kubernetes security: cluster hardening, network policies, runtime security',exp:'1–2 years'},
+  {name:'AWS Security Specialty',level:'Advanced',difficulty:'Medium–Hard',prereqs:'AWS experience',cost:'~$300',what:'AWS security services and best practices',exp:'1–2 years'},
+  {name:'HashiCorp Vault Associate',level:'Intermediate',difficulty:'Medium',prereqs:'Vault experience',cost:'~$70.50',what:'Vault deployment, secrets management, authentication',exp:'6–12 months'}
+],
+tools:['Docker','Kubernetes','Terraform','Ansible','HashiCorp Vault','GitHub Actions / GitLab CI','Jenkins','Trivy','Snyk','Checkov','Falco','OPA / Kyverno','Sigstore / Cosign','ArgoCD','Prometheus + Grafana'],
+interview:{
+  questions:['How would you integrate security scanning into a CI/CD pipeline?','Explain the Shared Responsibility Model for container security.','How do you manage secrets in a Kubernetes environment?','What is policy-as-code and give an example.','Describe how you would secure a Docker image.'],
+  practical:['Design a secure CI/CD pipeline for a given application','Identify security issues in a provided Dockerfile','Write a Kubernetes network policy for a specific scenario','Implement a basic secret rotation strategy'],
+  tips:['Know Docker and Kubernetes security deeply.','Be able to write pipeline YAML from memory.','Understand the full software supply chain.','Show you can balance security with developer experience.']
+},
+dailyWork:['Maintain and improve CI/CD pipelines with security checks','Review and approve infrastructure-as-code changes for security','Manage container image scanning and vulnerability remediation','Rotate and manage secrets across environments','Monitor runtime security alerts from Falco or similar tools','Collaborate with development and infrastructure teams on security improvements'],
+prosCons:{
+  pros:['One of the highest-paying security specialties','Automation means less manual toil','Bridge between development, operations, and security','High demand across all industries','Work with cutting-edge technology'],
+  cons:['Requires broad knowledge (dev + ops + security)','On-call for production security incidents','Rapidly evolving tools and practices','Can be overwhelming to keep up with everything','May need to enforce unpopular security policies'],
+  careerGrowth:'Excellent. DevSecOps → Platform Security Architect → Head of Security Engineering → VP Engineering/Security.',
+  workLife:'Can be demanding due to on-call rotations, but generally reasonable. Many roles fully remote.',
+  remote:'Extremely remote-friendly — all work is done via code and remote infrastructure.'
+},
+timeline:{
+  '0–3':'Learn Linux, networking, and basic scripting. Get comfortable with Git and CI/CD concepts.',
+  '3–6':'Master Docker. Learn Kubernetes basics. Set up CI/CD pipelines. Study for CKA.',
+  '6–12':'Learn Terraform, Vault, and security tool integration. Earn CKA. Build portfolio.',
+  '1–2 Years':'Earn CKS. Implement full DevSecOps pipelines. Apply for DevSecOps Engineer roles.'
+}
+},
+// ==================== 11. MALWARE ANALYSIS ====================
+{
+id:'malware',icon:'🦠',name:'Malware Analysis',color:'#dc2626',
+tagline:'Reverse engineer threats to understand how they work.',
+comparison:{difficulty:'High',coding:'High',linux:'High',networking:'Medium',cloud:'Low',certs:'GREM, GMOB, CRTP',salary:'$80K–$160K',remote:'Yes',demand:'Medium',bestFor:'Low-level tinkerers who love reverse engineering'},
+intro:{
+  desc:'Malware Analysis involves dissecting malicious software to understand its behavior, capabilities, and origin. Analysts use static and dynamic analysis techniques to reverse engineer malware, extract IOCs, and develop defenses against threats.',
+  daily:['Receive and triage new malware samples','Perform static analysis (strings, PE headers, imports)','Perform dynamic analysis in sandboxed environments','Reverse engineer malware functionality with disassemblers','Produce malware analysis reports with IOCs and behavioral indicators'],
+  who:['People who love reverse engineering and low-level computing','Those comfortable with assembly language and memory concepts','Individuals who are patient and methodical','Anyone fascinated by how malicious software operates'],
+  skills:['Programming (C/C++, Python, Assembly)','Operating system internals (Windows PE format, Linux ELF)','Reverse engineering tools (Ghidra, IDA, x64dbg)','Sandbox and VM management','Networking and protocol analysis'],
+},
+jobs:['Malware Analyst','Reverse Engineer','Threat Intelligence Analyst (Malware-focused)','Exploit Developer / Researcher','Security Researcher','Anti-Malware Engineer','Vulnerability Researcher'],
+progression:['Junior Malware Analyst','Malware Analyst / Reverse Engineer','Senior Malware Analyst / Security Researcher','Principal Researcher / Team Lead'],
+salary:[
+  {region:'India',entry:'₹4–9 LPA',mid:'₹12–25 LPA',senior:'₹30–55 LPA'},
+  {region:'USA',entry:'$70–95K',mid:'$100–140K',senior:'$145–180K+'},
+  {region:'Europe',entry:'€45–60K',mid:'€70–105K',senior:'€110–155K+'}
+],
+skills:{
+  beginner:['C/C++ programming fundamentals','x86/x64 assembly basics','Windows OS internals','Linux command line and scripting','Networking and protocol basics'],
+  intermediate:['PE file format analysis','Debugging with x64dbg/WinDbg','Ghidra or IDA for disassembly','Dynamic analysis in sandboxes (ANY.RUN, CAPE)','Anti-analysis technique identification'],
+  advanced:['Advanced reverse engineering (C++, .NET, Go binaries)','Kernel-mode rootkit analysis','Exploit development and shellcode analysis','Unpacking and deobfuscation techniques','Malware development for defensive research']
+},
+roadmap:[
+  {title:'Programming',desc:'Learn C/C++, Python, and x86/x64 assembly'},
+  {title:'OS Internals',desc:'Windows PE format, memory layout, process model, API calls'},
+  {title:'Reverse Engineering Basics',desc:'Static analysis: strings, imports, PE headers. Ghidra fundamentals'},
+  {title:'Debugging',desc:'x64dbg, WinDbg, GDB — stepping through code, breakpoints, memory inspection'},
+  {title:'Dynamic Analysis',desc:'Sandbox analysis, behavioral monitoring (ProcMon, API Monitor)'},
+  {title:'Common Malware Techniques',desc:'Process injection, persistence, C2 communication, evasion'},
+  {title:'Unpacking & Deobfuscation',desc:'Identify packing, manual unpacking, deobfuscating encoded strings'},
+  {title:'Advanced Analysis',desc:'Kernel malware, rootkits, fileless malware, .NET/Go analysis'},
+  {title:'Reporting',desc:'Write comprehensive reports with IOCs, TTPs, and MITRE ATT&CK mapping'},
+  {title:'Certifications',desc:'GREM (GIAC Reverse Engineering Malware) is the gold standard'}
+],
+resources:{
+  youtube:[
+    {name:'OALabs — Malware Analysis',url:'https://www.youtube.com/c/OALabs'},
+    {name:'MalwareAnalysisForHedgehogs',url:'https://www.youtube.com/c/MalwareAnalysisForHedgehogs'},
+    {name:'John Hammond — Reverse Engineering',url:'https://www.youtube.com/c/JohnHammond010'},
+    {name:'LiveOverflow — Binary Exploitation',url:'https://www.youtube.com/c/LiveOverflow'},
+    {name:'Hasherezade — Malware & RE',url:'https://www.youtube.com/@hasherezade'}
+  ],
+  docs:[
+    {name:'Ghidra Documentation',url:'https://ghidra-sre.org/InstallationGuide.html'},
+    {name:'PE Format Specification',url:'https://learn.microsoft.com/en-us/windows/win32/debug/pe-format'},
+    {name:'Practical Malware Analysis (Book Companion)',url:'https://practicalmalwareanalysis.com/'},
+    {name:'ANY.RUN Interactive Sandbox',url:'https://any.run/'}
+  ],
+  websites:[
+    {name:'MalwareBazaar',url:'https://bazaar.abuse.ch/',desc:'Malware sample repository'},
+    {name:'ANY.RUN',url:'https://any.run/',desc:'Interactive malware sandbox'},
+    {name:'VirusTotal',url:'https://www.virustotal.com/',desc:'File scanning and analysis'},
+    {name:'Malware Unicorn (RE Workshops)',url:'https://malwareunicorn.org/',desc:'Reverse engineering workshops'},
+    {name:'crackmes.one',url:'https://crackmes.one/',desc:'Reverse engineering challenges'}
+  ]
+},
+practice:{
+  beginner:['Malware Unicorn RE101 and RE102 workshops','Analyze simple malware samples from MalwareBazaar','crackmes.one — reverse engineering challenges'],
+  intermediate:['Analyze real malware samples in ANY.RUN','Practice unpacking with known packers','Work through "Practical Malware Analysis" exercises'],
+  advanced:['Analyze APT toolkits and ransomware','Kernel-mode rootkit analysis','Develop custom analysis tools']
+},
+projects:[
+  {name:'PE File Analyzer',difficulty:'Beginner',time:'3–5 days',desc:'Parse PE headers and display imports/exports. Skills: PE format, Python.'},
+  {name:'String Decoder Tool',difficulty:'Beginner',time:'2–3 days',desc:'Extract and decode obfuscated strings from malware. Skills: encoding, Python.'},
+  {name:'Behavioral Monitor',difficulty:'Intermediate',time:'1–2 weeks',desc:'Monitor API calls and file system changes in a sandbox. Skills: hooking, OS APIs.'},
+  {name:'Malware Classification Tool',difficulty:'Intermediate',time:'2 weeks',desc:'Classify malware by family using ML or signatures. Skills: ML basics, feature extraction.'},
+  {name:'Custom Sandbox Environment',difficulty:'Advanced',time:'3–4 weeks',desc:'Build an automated malware analysis sandbox. Skills: virtualization, automation, analysis.'},
+  {name:'Unpacking Framework',difficulty:'Advanced',time:'3–4 weeks',desc:'Automate unpacking for common packers. Skills: assembly, memory manipulation.'}
+],
+certs:[
+  {name:'CompTIA Security+',level:'Beginner',difficulty:'Easy–Medium',prereqs:'None',cost:'~$392',what:'Broad security foundations',exp:'0–6 months'},
+  {name:'eCRE (Reverse Engineering Professional)',level:'Intermediate',difficulty:'Medium–Hard',prereqs:'RE fundamentals',cost:'~$400',what:'Practical reverse engineering skills',exp:'1–2 years'},
+  {name:'GREM (GIAC Reverse Engineering Malware)',level:'Advanced',difficulty:'Hard',prereqs:'RE and malware analysis experience',cost:'~$2,499',what:'Advanced malware reverse engineering and analysis',exp:'2–3 years'},
+  {name:'OSCE / OSED',level:'Advanced',difficulty:'Very Hard',prereqs:'OSCP-level + exploit dev',cost:'~$1,599+',what:'Advanced exploit development and binary analysis',exp:'3+ years'}
+],
+tools:['Ghidra','IDA Pro','x64dbg','WinDbg','GDB','PEStudio','PEiD','Detect It Easy (DIE)','FLOSS (FLARE Obfuscated String Solver)','CAPE Sandbox','Cuckoo Sandbox','ANY.RUN','Process Monitor','API Monitor','YARA','Volatility','Hiew'],
+interview:{
+  questions:['Walk me through your malware analysis process from receiving a sample to final report.','How would you identify if a sample is packed? What tools would you use?','Explain the difference between static and dynamic analysis. When would you use each?','Describe common malware persistence mechanisms on Windows.','How do you handle anti-analysis techniques (anti-VM, anti-debug)?'],
+  practical:['Analyze a provided malware sample and write a report','Identify the C2 communication method from a PCAP','Decode obfuscated strings in a binary','Map malware behaviors to MITRE ATT&CK techniques'],
+  tips:['Practice with real samples — start simple, then progress to complex.','Be able to explain your analysis to non-technical audiences.','Know Windows internals deeply — most malware targets Windows.','Build a blog documenting your analysis work.']
+},
+dailyWork:['Receive new malware samples from SOC/IR team or threat feeds','Perform initial triage (hash lookup, AV scan, string extraction)','Conduct static analysis — PE structure, imports, code flow','Run sample in isolated sandbox, capture behavioral indicators','Deep-dive reverse engineering with Ghidra/x64dbg for complex samples','Write analysis report with IOCs, MITRE ATT&CK mapping, and recommendations'],
+prosCons:{
+  pros:['Deeply technical and intellectually rewarding','Critical role in understanding and defending against threats','Good compensation for specialized skills','Contributes to threat intelligence and incident response','Remote-friendly analytical work'],
+  cons:['Steep learning curve — requires deep OS and programming knowledge','Constantly evolving evasion techniques to keep up with','Can be repetitive (analyzing similar malware families)','Isolated/specialized — fewer job openings than general security roles','May require patience for complex, heavily obfuscated samples'],
+  careerGrowth:'Can evolve into vulnerability research, exploit development, or threat intelligence leadership.',
+  workLife:'Generally good. Analytical work with regular hours. Urgent samples may require quick turnaround.',
+  remote:'Very remote-friendly. All analysis can be done remotely with proper isolated environments.'
+},
+timeline:{
+  '0–3':'Learn C/C++, Python, and x86 assembly basics. Study Windows PE format.',
+  '3–6':'Complete Malware Unicorn workshops. Analyze simple samples with Ghidra. Study for eCRE.',
+  '6–12':'Practice dynamic analysis with sandboxes. Learn unpacking techniques. Build analysis portfolio.',
+  '1–2 Years':'Earn GREM. Analyze real-world malware. Apply for Malware Analyst roles.'
+}
+},
+// ==================== 12. BUG BOUNTY ====================
+{
+id:'bugbounty',icon:'🎯',name:'Bug Bounty',color:'#eab308',
+tagline:'Find vulnerabilities, earn rewards, build reputation.',
+comparison:{difficulty:'Medium–High',coding:'High',linux:'High',networking:'High',cloud:'Medium',certs:'None required (OSCP helps)',salary:'Variable ($0–$500K+)',remote:'Yes',demand:'N/A (freelance)',bestFor:'Self-motivated hunters who thrive on competition and rewards'},
+intro:{
+  desc:'Bug Bounty hunters find and responsibly disclose security vulnerabilities in exchange for rewards (bounties). This is a freelance or supplementary career path where you test real-world applications, report bugs through platforms like HackerOne and Bugcrowd, and earn money based on vulnerability severity.',
+  daily:['Reconnaissance on target programs — subdomain enumeration, technology fingerprinting','Manual and automated testing of web applications and APIs','Writing clear, reproducible vulnerability reports','Reading disclosed reports for inspiration and technique learning','Iterating on techniques and developing custom tooling'],
+  who:['Self-motivated individuals who can work independently','Those who enjoy competitive, reward-based work','People with strong web security and networking skills','Anyone who wants flexible, location-independent income'],
+  skills:['Web application security (deep OWASP Top 10+ knowledge)','Reconnaissance and OSINT','API testing','Automation and scripting','Excellent report writing'],
+},
+jobs:['Bug Bounty Hunter (freelance/full-time)','Security Researcher','Vulnerability Disclosure Program (VDP) Participant','Security Consultant (self-employed)','Responsible Disclosure Researcher'],
+progression:['Beginner — learning fundamentals and testing easy programs','Intermediate — consistent findings on medium-difficulty targets','Advanced — finding critical/unique vulnerabilities on major programs','Elite — top leaderboard rankings, private program invitations, consulting offers'],
+salary:[
+  {region:'India',entry:'₹0–3 LPA (learning phase)',mid:'₹5–20 LPA (part-time)',senior:'₹25–80 LPA+ (skilled full-time)'},
+  {region:'USA',entry:'$0–10K (learning phase)',mid:'$20–80K (part-time)',senior:'$100–500K+ (top hunters)'},
+  {region:'Europe',entry:'€0–8K (learning phase)',mid:'€15–60K (part-time)',senior:'€80–300K+ (top hunters)'}
+],
+skills:{
+  beginner:['Web application fundamentals (HTTP, HTML, JavaScript, APIs)','OWASP Top 10 — deep understanding','Linux command line and scripting basics','Subdomain enumeration and reconnaissance tools','Proxy tools (Burp Suite)'],
+  intermediate:['Advanced web vulnerabilities (SSRF, deserialization, race conditions)','API security testing','Subdomain takeover, CORS misconfigurations','Automation with Python and Bash','JavaScript analysis and DOM-based vulnerabilities'],
+  advanced:['Source code analysis (when available)','Exploit chaining — combining multiple bugs for maximum impact','Mobile and IoT bug bounty techniques','Novel vulnerability discovery','Custom tool development']
+},
+roadmap:[
+  {title:'Web Technology Fundamentals',desc:'HTTP, HTML, CSS, JavaScript, REST APIs, databases, authentication'},
+  {title:'Security Fundamentals',desc:'OWASP Top 10 deep dive, attack types, defense mechanisms'},
+  {title:'Burp Suite Mastery',desc:'Proxying, repeater, intruder, scanner, extensions'},
+  {title:'Reconnaissance',desc:'Subdomain enumeration, technology fingerprinting, directory discovery'},
+  {title:'Common Vulnerability Classes',desc:'XSS, SQLi, IDOR, SSRF, CSRF, authentication bypasses'},
+  {title:'Advanced Vulnerabilities',desc:'Deserialization, race conditions, template injection, access control'},
+  {title:'API Testing',desc:'REST and GraphQL API security testing methodology'},
+  {title:'Report Writing',desc:'Clear, reproducible reports with impact analysis'},
+  {title:'Choose Programs',desc:'Start with VDPs and easy programs. Progress to private invites.'},
+  {title:'Continuous Learning',desc:'Read disclosed reports, follow top hunters, practice on labs'}
+],
+resources:{
+  youtube:[
+    {name:'NahamSec — Bug Bounty & Web Hacking',url:'https://www.youtube.com/c/Nahamsec'},
+    {name:'STÖK — Bug Bounty Hunting',url:'https://www.youtube.com/c/STOKfredrik'},
+    {name:'InsiderPhD — Bug Bounty for Beginners',url:'https://www.youtube.com/c/InsiderPhD'},
+    {name:'The Cyber Mentor — Web Hacking',url:'https://www.youtube.com/c/TheCyberMentor'},
+    {name:'HackerOne — Hacker Interviews',url:'https://www.youtube.com/c/HackerOne'}
+  ],
+  docs:[
+    {name:'PortSwigger Web Security Academy',url:'https://portswigger.net/web-security'},
+    {name:'OWASP Testing Guide',url:'https://owasp.org/www-project-web-security-testing-guide/'},
+    {name:'HackerOne Hacktivity',url:'https://hackerone.com/hacktivity',desc:'Disclosed vulnerability reports'},
+    {name:'Bugcrowd University',url:'https://www.bugcrowd.com/hackers/bugcrowd-university/'}
+  ],
+  websites:[
+    {name:'HackerOne',url:'https://hackerone.com',desc:'Largest bug bounty platform'},
+    {name:'Bugcrowd',url:'https://bugcrowd.com',desc:'Bug bounty and VDP platform'},
+    {name:'Intigriti',url:'https://intigriti.com',desc:'European bug bounty platform'},
+    {name:'PortSwigger Web Security Academy',url:'https://portswigger.net/web-security',desc:'Free web security labs'},
+    {name:'TryHackMe',url:'https://tryhackme.com',desc:'Beginner-friendly guided learning'}
+  ]
+},
+practice:{
+  beginner:['PortSwigger Academy — complete all beginner labs','TryHackMe web security rooms','OWASP Juice Shop — all challenges'],
+  intermediate:['PortSwigger Academy — advanced labs','Hack The Box web challenges','Join VDP (Vulnerability Disclosure Programs) for practice'],
+  advanced:['HackerOne/Bugcrowd private programs','CTF competitions (web-focused)','Research new vulnerability classes']
+},
+projects:[
+  {name:'Subdomain Enumerator',difficulty:'Beginner',time:'2–3 days',desc:'Build a tool that discovers subdomains using multiple techniques. Skills: DNS, HTTP, Python.'},
+  {name:'Automation Scanner',difficulty:'Intermediate',time:'1–2 weeks',desc:'Automate common vulnerability checks. Skills: HTTP, Python, security testing.'},
+  {name:'Custom Burp Extension',difficulty:'Intermediate',time:'1–2 weeks',desc:'Write a Burp Suite extension for a specific testing need. Skills: Java/Python, Burp API.'},
+  {name:'Recon Framework',difficulty:'Advanced',time:'2–4 weeks',desc:'Build a comprehensive reconnaissance pipeline. Skills: automation, APIs, data aggregation.'},
+  {name:'Vulnerability Writeup Blog',difficulty:'Ongoing',time:'Ongoing',desc:'Document your findings and techniques. Skills: technical writing, communication.'}
+],
+certs:[
+  {name:'No certification required',level:'N/A',difficulty:'N/A',prereqs:'N/A',cost:'N/A',what:'Bug bounty is merit-based — your findings are your credentials',exp:'N/A'},
+  {name:'CompTIA Security+ (optional, helpful)',level:'Beginner',difficulty:'Easy–Medium',prereqs:'None',cost:'~$392',what:'Good foundational knowledge',exp:'0–6 months'},
+  {name:'eWPT / BSCP (optional, helpful)',level:'Intermediate',difficulty:'Medium',prereqs:'Web security basics',cost:'~$400',what:'Validates web app pentesting skills',exp:'6–12 months'},
+  {name:'OSCP (optional, impressive)',level:'Advanced',difficulty:'Hard',prereqs:'Strong pentesting skills',cost:'~$1,599+',what:'Industry-recognized pentesting certification',exp:'2+ years'}
+],
+tools:['Burp Suite','Nmap','ffuf / Feroxbuster','Subfinder','Amass','httpx','Nuclei','waybackurls','gau','ParamSpider','Dalfox (XSS scanner)','SQLmap','Interactsh','Axiom (recon framework)','Cherry Bomb','JavaScript Beautifier / Analyzer'],
+interview:{
+  questions:['N/A — Bug bounty is not traditional employment. However, for related roles:','How do you approach a new target? Describe your recon methodology.','What was your most impactful finding and how did you discover it?','How do you prioritize which programs to test?','Describe a time you chained multiple vulnerabilities for greater impact.'],
+  practical:['Demo a vulnerability you have found (redacted) and explain the impact','Perform recon on a provided target and identify potential attack surface','Write a sample vulnerability report','Explain your methodology for testing a specific vulnerability class'],
+  tips:['Read disclosed HackerOne reports — they are a goldmine of techniques.','Focus on one vulnerability class until you are proficient, then expand.','Quality reports get bounties — invest in clear, reproducible documentation.','Be persistent — bug bounty rewards patience and methodology.','Start with less competitive programs to build skills and reputation.']
+},
+dailyWork:['Choose a target program and perform reconnaissance','Enumerate attack surface — subdomains, endpoints, parameters','Test for common and advanced vulnerability classes','Write and submit vulnerability reports through bounty platforms','Read disclosed reports from other hunters for new techniques','Update automation tools and develop custom scripts'],
+prosCons:{
+  pros:['Unlimited earning potential — top hunters earn six figures','Complete freedom — work when and where you want','No degree or certification required','Build a public reputation and portfolio','Directly improve security for real-world applications'],
+  cons:['Income is highly variable and inconsistent (especially at first)','No guaranteed income, benefits, or job security','Can be extremely competitive on popular programs','Months of effort can go without a finding','Self-discipline is essential — no manager or team to keep you accountable'],
+  careerGrowth:'Can transition to pentesting, security research, AppSec, or start a security consulting firm. Top hunters get hired by the companies they hack.',
+  workLife:'Maximum flexibility. You choose your own schedule. Risk of overwork due to bounty motivation.',
+  remote:'100% remote. Work from anywhere with an internet connection.'
+},
+timeline:{
+  '0–3':'Learn web fundamentals and OWASP Top 10. Complete PortSwigger Academy beginner labs.',
+  '3–6':'Start testing on VDP and easy programs. Focus on XSS, IDOR, and information disclosure.',
+  '6–12':'Expand to more programs and vulnerability types. Develop automation tools. Aim for first paid bounty.',
+  '1–2 Years':'Build reputation, get private program invitations. Specialize in a niche. Aim for consistent income.'
+}
+}
+];
+
+/* ================================================================
+   MASTER ROADMAP, FAQ, RESOURCES DATA
+   ================================================================ */
+const MASTER_ROADMAP = [
+  {num:'01',title:'Computer Fundamentals',desc:'Hardware, OS basics, file systems, how computers work'},
+  {num:'02',title:'Networking',desc:'TCP/IP, OSI model, DNS, HTTP, subnetting, routing'},
+  {num:'03',title:'Linux',desc:'Command line, file permissions, bash scripting, system admin'},
+  {num:'04',title:'Windows',desc:'Active Directory, Group Policy, PowerShell, Windows internals'},
+  {num:'05',title:'Programming',desc:'Python for scripting, Bash automation, SQL basics'},
+  {num:'06',title:'Web Technologies',desc:'HTML, CSS, JavaScript, HTTP, REST APIs, databases'},
+  {num:'07',title:'Security Fundamentals',desc:'CIA triad, OWASP Top 10, common attacks, defense-in-depth'},
+  {num:'08',title:'Security+',desc:'Foundational certification validating broad security knowledge'},
+  {num:'09',title:'Choose a Specialization',desc:'Pick a career path and dive deep into it'},
+  {num:'10',title:'Labs & Practice',desc:'Hands-on platforms: TryHackMe, HTB, PortSwigger, CyberDefenders'},
+  {num:'11',title:'Specialized Certification',desc:'Earn a cert in your chosen domain (OSCP, CySA+, CCNA, etc.)'},
+  {num:'12',title:'Portfolio & Job Search',desc:'Blog, GitHub projects, CTF writeups, LinkedIn, applications'}
+];
+
+const FAQS = [
+  {q:'Do I need to know how to code?',a:'It depends on the path. Offensive security, AppSec, DevSecOps, and malware analysis require strong coding skills. GRC and some defensive roles require minimal coding. Python and Bash are recommended for virtually every path as automation is universally valuable.'},
+  {q:'Do I need to know Linux?',a:'Yes, at least at a basic level. Most security tools run on Linux, many servers use Linux, and certifications expect Linux proficiency. You do not need to be an expert immediately — start with the command line and build from there.'},
+  {q:'Can I get a cybersecurity job without a degree?',a:'Absolutely. The cybersecurity industry values skills, certifications, and hands-on experience over formal degrees. Many professionals are self-taught or career changers. Certifications (Security+, CySA+, OSCP) and a strong portfolio of labs and projects can substitute for a degree at most companies.'},
+  {q:'Which certification should I start with?',a:'CompTIA Security+ is the most widely recognized entry-level certification. It covers broad security fundamentals and is accepted globally. For a more networking-focused start, CompTIA Network+ first, then Security+. For hands-on paths, eJPT is an excellent practical alternative.'},
+  {q:'How long does it take to get a cybersecurity job?',a:'With dedicated study (2–4 hours daily), most people can land an entry-level role (SOC Analyst, Junior Pentester, GRC Analyst) in 6–12 months. Having prior IT experience accelerates this significantly. The key is hands-on practice, not just studying theory.'},
+  {q:'Can I learn cybersecurity for free?',a:'Yes, largely. TryHackMe (free rooms), PortSwigger Academy (completely free), YouTube channels (TCM Security, NetworkChuck, Professor Messer), OverTheWire, PicoCTF, and OWASP resources are all free. Paid platforms like Hack The Box and HTB Academy offer additional value but are not strictly necessary.'},
+  {q:'What is the easiest cybersecurity path to start with?',a:'GRC (Governance, Risk & Compliance) has the lowest technical barrier to entry and is great for career changers from business/legal backgrounds. Defensive Security (SOC Analyst) is the most common entry point for those with some technical aptitude. Offensive Security requires the broadest technical foundation.'},
+  {q:'Should I specialize early or learn broadly first?',a:'Learn broadly first. Complete a foundation in networking, Linux, and security fundamentals before specializing. This foundation makes any specialization easier. Then pick one path and go deep. You can always pivot later — many skills transfer across domains.'}
+];
+
+const RESOURCES = [
+  {title:'📺 YouTube Channels',items:[
+    'The Cyber Mentor (TCM Security) — Ethical hacking & pentesting',
+    'NetworkChuck — Networking, Linux, cloud, hacking',
+    'John Hammond — CTFs, malware, pentesting, forensics',
+    'Professor Messer — CompTIA certifications (A+, Network+, Security+)',
+    'David Bombal — Networking, ethical hacking, Python',
+    'LiveOverflow — Web security, binary exploitation, CTFs',
+    'NahamSec — Bug bounty and web hacking',
+    'STÖK — Bug bounty recon and hunting',
+    'IppSec — Hack The Box walkthroughs',
+    '13Cubed — Digital forensics and incident response',
+    'SecurityFWD — Security operations and blue team',
+    'Black Hills InfoSec — Webcasts on offensive and defensive topics'
+  ]},
+  {title:'📝 Blogs & Reading',items:[
+    'Krebs on Security (krebsonsecurity.com)',
+    'The Hacker News (thehackernews.com)',
+    'PortSwigger Research Blog (portswigger.net/research)',
+    'SANS Internet Storm Center (isc.sans.edu)',
+    'Trail of Bits Blog (blog.trailofbits.com)',
+    'Google Project Zero (googleprojectzero.blogspot.com)',
+    'HackerOne Hacktivity (hackerone.com/hacktivity)',
+    'OWASP Blog (owasp.org/news)'
+  ]},
+  {title:'📚 Books',items:[
+    'The Web Application Hacker\'s Handbook',
+    'Practical Malware Analysis',
+    'Hacking: The Art of Exploitation',
+    'Penetration Testing (Georgia Weidman)',
+    'Blue Team Handbook (Don Murdoch)',
+    'The Art of Intrusion / The Art of Deception (Kevin Mitnick)',
+    'Applied Cryptography (Bruce Schneier)',
+    'Threat Modeling (Adam Shostack)',
+    'Black Hat Python',
+    'Operator Handbook (OSINT & Pentest reference)'
+  ]},
+  {title:'🎧 Podcasts',items:[
+    'Darknet Diaries — True stories from the dark side of the internet',
+    'Risky Business — Weekly infosec news and analysis',
+    'Security Now (Steve Gibson) — Deep technical security topics',
+    'Smashing Security — Lighter take on cybersecurity news',
+    'The CyberWire — Daily news briefing',
+    'Hacked (McAfee) — Cybercrime stories',
+    'Malicious Life — History of cybersecurity'
+  ]},
+  {title:'📰 News & Threat Intel',items:[
+    'CISA Alerts (cisa.gov/news-events/alerts)',
+    'BleepingComputer (bleepingcomputer.com)',
+    'The Record by Recorded Future (therecord.media)',
+    'SecurityWeek (securityweek.com)',
+    'ThreatPost (threatpost.com)',
+    'VirusTotal (virustotal.com)',
+    'Shodan (shodan.io)'
+  ]},
+  {title:'🔧 Cheat Sheets & References',items:[
+    'HackTricks (book.hacktricks.xyz) — Pentesting wiki',
+    'PayloadsAllTheThings (GitHub) — Exploitation payloads',
+    'OWASP Cheat Sheet Series (cheatsheetseries.owasp.org)',
+    'SANS Penetration Testing Cheat Sheets (sans.org)',
+    'GTFOBins (gtfobins.github.io) — Linux privilege escalation',
+    'LOLBAS Project (lolbas-project.github.io) — Windows LOLBins',
+    'MITRE ATT&CK (attack.mitre.org)',
+    'CyberChef (gchq.github.io/CyberChef) — Data transformation Swiss army knife'
+  ]},
+  {title:'📦 GitHub Repositories',items:[
+    'swisskyrepo/PayloadsAllTheThings',
+    'Hack-with-Github/Awesome-Hacking',
+    'enaqx/awesome-pentest',
+    'trimstray/the-book-of-secret-knowledge',
+    '0xInfection/Awesome-WAF',
+    'ashishb/osx-and-ios-security-awesome',
+    'drduh/macOS-Security-and-Privacy-Guide',
+    'gchq/CyberChef'
+  ]}
+];
+
+/* ================================================================
+   RENDERING FUNCTIONS
+   ================================================================ */
+
+/* --- Career Path Cards --- */
+function renderPathCards() {
+  const grid = document.getElementById('pathsGrid');
+  grid.innerHTML = CAREERS.map(c => `
+    <div class="path-card" data-id="${c.id}" style="--card-accent:${c.color}" onclick="scrollToSection('${c.id}')">
+      <div class="card-icon">${c.icon}</div>
+      <h3>${c.name}</h3>
+      <p>${c.tagline}</p>
+    </div>
+  `).join('');
+}
+
+/* --- Career Detail Sections --- */
+function renderCareerDetails() {
+  const container = document.getElementById('careerDetails');
+  container.innerHTML = CAREERS.map(c => `
+    <section class="content-section" id="detail-${c.id}">
+      <div class="career-detail fade-in">
+        <div class="detail-header">
+          <span class="dh-icon">${c.icon}</span>
+          <h2>${c.name}</h2>
+          <span class="dh-tag" style="border-color:${c.color};color:${c.color}">${c.comparison.difficulty}</span>
+        </div>
+
+        <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593; Back to Top</button>
+
+        ${subSection(1, 'Introduction', renderIntro(c), true)}
+        ${subSection(2, 'Job Roles', renderJobs(c))}
+        ${subSection(3, 'Career Progression', renderProgression(c))}
+        ${subSection(4, 'Salary Information', renderSalary(c))}
+        ${subSection(5, 'Skills Required', renderSkills(c))}
+        ${subSection(6, 'Learning Roadmap', renderRoadmap(c))}
+        ${subSection(7, 'Free Learning Resources', renderResources(c))}
+        ${subSection(8, 'Practice Platforms', renderPractice(c))}
+        ${subSection(9, 'Hands-on Projects', renderProjects(c))}
+        ${subSection(10, 'Certifications', renderCerts(c))}
+        ${subSection(11, 'Common Tools', renderTools(c))}
+        ${subSection(12, 'Interview Preparation', renderInterview(c))}
+        ${subSection(13, 'Daily Work', renderDailyWork(c))}
+        ${subSection(14, 'Pros and Cons', renderProsCons(c))}
+        ${subSection(15, 'Roadmap Timeline', renderTimeline(c))}
+      </div>
+    </section>
+  `).join('');
+}
+
+function subSection(num, title, content, open=false) {
+  return `<div class="sub-section">
+    <button class="sub-toggle ${open?'open':''}" onclick="toggleSub(this)">
+      <span>${num}. ${title}</span><span class="toggle-icon">+</span>
+    </button>
+    <div class="sub-content ${open?'open':''}">${content}</div>
+  </div>`;
+}
+
+function renderIntro(c) {
+  const d = c.intro;
+  return `
+    <h4>What Is ${c.name}?</h4><p>${d.desc}</p>
+    <h4>What Professionals Do Daily</h4><ul>${d.daily.map(x=>`<li>${x}</li>`).join('')}</ul>
+    <h4>Who Should Choose This Path?</h4><ul>${d.who.map(x=>`<li>${x}</li>`).join('')}</ul>
+    <h4>Core Skills Required</h4><ul>${d.skills.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+}
+
+function renderJobs(c) {
+  return `<p>Common job titles in ${c.name}:</p><ul>${c.jobs.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+}
+
+function renderProgression(c) {
+  const steps = c.progression;
+  return `<div class="roadmap-steps">${steps.map((s,i) => `
+    <div class="roadmap-step">
+      <div class="step-marker">${i+1}</div>
+      <div class="step-content"><h5>${s}</h5></div>
+    </div>`).join('')}</div>`;
+}
+
+function renderSalary(c) {
+  return `<p class="note">Salaries are approximate and vary by company, location, and experience.</p>
+  <table class="salary-table">
+    <thead><tr><th>Region</th><th>Entry Level</th><th>Mid Level</th><th>Senior Level</th></tr></thead>
+    <tbody>${c.salary.map(s => `<tr><td>${s.region}</td><td>${s.entry}</td><td>${s.mid}</td><td>${s.senior}</td></tr>`).join('')}</tbody>
+  </table>`;
+}
+
+function renderSkills(c) {
+  return `
+    <h4>Beginner</h4><ul>${c.skills.beginner.map(x=>`<li>${x}</li>`).join('')}</ul>
+    <h4>Intermediate</h4><ul>${c.skills.intermediate.map(x=>`<li>${x}</li>`).join('')}</ul>
+    <h4>Advanced</h4><ul>${c.skills.advanced.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+}
+
+function renderRoadmap(c) {
+  return `<div class="roadmap-steps">${c.roadmap.map((s,i) => `
+    <div class="roadmap-step">
+      <div class="step-marker">${i+1}</div>
+      <div class="step-content"><h5>${s.title}</h5><p>${s.desc}</p></div>
+    </div>`).join('')}</div>`;
+}
+
+function renderResources(c) {
+  const r = c.resources;
+  return `
+    <div class="resource-group">
+      <h5>Best YouTube Channels & Playlists</h5>
+      <div class="resource-links">${r.youtube.map(x=>`<a class="resource-link" href="${x.url}" target="_blank" rel="noopener"><span class="rl-icon">▶</span>${x.name}</a>`).join('')}</div>
+    </div>
+    <div class="resource-group">
+      <h5>Official Documentation</h5>
+      <div class="resource-links">${r.docs.map(x=>`<a class="resource-link" href="${x.url}" target="_blank" rel="noopener"><span class="rl-icon">&#128214;</span>${x.name}</a>`).join('')}</div>
+    </div>
+    <div class="resource-group">
+      <h5>Free Websites & Platforms</h5>
+      <div class="resource-links">${r.websites.map(x=>`<a class="resource-link" href="${x.url}" target="_blank" rel="noopener"><span class="rl-icon">&#127760;</span>${x.name} — ${x.desc}</a>`).join('')}</div>
+    </div>`;
+}
+
+function renderPractice(c) {
+  const p = c.practice;
+  return `
+    <h4>Beginner Friendly</h4><ul>${p.beginner.map(x=>`<li>${x}</li>`).join('')}</ul>
+    <h4>Intermediate</h4><ul>${p.intermediate.map(x=>`<li>${x}</li>`).join('')}</ul>
+    <h4>Advanced</h4><ul>${p.advanced.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+}
+
+function renderProjects(c) {
+  return `<div class="project-cards">${c.projects.map(p => `
+    <div class="project-card">
+      <h5>${p.name}</h5>
+      <div class="pc-meta"><span>Difficulty: ${p.difficulty}</span><span>Time: ${p.time}</span></div>
+      <p>${p.desc}</p>
+    </div>`).join('')}</div>`;
+}
+
+function renderCerts(c) {
+  return `<div class="cert-cards">${c.certs.map(cert => `
+    <div class="cert-card">
+      <h5>${cert.name}</h5>
+      <div class="cert-meta">
+        <span class="cert-tag">${cert.level}</span>
+        <span class="cert-tag">${cert.difficulty}</span>
+        <span class="cert-tag">Cost: ${cert.cost}</span>
+      </div>
+      <p><strong>What you'll learn:</strong> ${cert.what}</p>
+      <p><strong>Prerequisites:</strong> ${cert.prereqs}</p>
+      <p><strong>Recommended experience:</strong> ${cert.exp}</p>
+    </div>`).join('')}</div>`;
+}
+
+function renderTools(c) {
+  return `<div class="tool-tags">${c.tools.map(t => `<span class="tool-tag">${t}</span>`).join('')}</div>`;
+}
+
+function renderInterview(c) {
+  const i = c.interview;
+  return `
+    <h4>Common Interview Questions</h4>
+    <ol class="interview-list">${i.questions.map(q=>`<li>${q}</li>`).join('')}</ol>
+    <h4>Practical / Hands-on Expectations</h4>
+    <ol class="interview-list">${i.practical.map(q=>`<li>${q}</li>`).join('')}</ol>
+    <h4>Resume & Portfolio Tips</h4>
+    <ul>${i.tips.map(q=>`<li>${q}</li>`).join('')}</ul>`;
+}
+
+function renderDailyWork(c) {
+  return `<ul>${c.dailyWork.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+}
+
+function renderProsCons(c) {
+  const pc = c.prosCons;
+  return `
+    <div class="proscons">
+      <div class="proscons-col"><h5 style="color:#22c55e">Advantages</h5><ul>${pc.pros.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      <div class="proscons-col"><h5 style="color:#ef4444">Challenges</h5><ul>${pc.cons.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    </div>
+    <h4>Career Growth</h4><p>${pc.careerGrowth}</p>
+    <h4>Work-Life Balance</h4><p>${pc.workLife}</p>
+    <h4>Remote Opportunities</h4><p>${pc.remote}</p>`;
+}
+
+function renderTimeline(c) {
+  const entries = Object.entries(c.timeline);
+  return `<div class="timeline-grid">${entries.map(([period,tasks]) => `
+    <div class="timeline-card">
+      <h5>${period}</h5>
+      <ul><li>${tasks}</li></ul>
+    </div>`).join('')}</div>`;
+}
+
+/* --- Comparison Table --- */
+function renderComparison() {
+  const table = document.getElementById('compTable');
+  const headers = ['Career Path','Difficulty','Coding','Linux','Networking','Cloud','Key Certs','Avg Salary (US)','Remote','Demand','Best For'];
+  const keys = ['name','difficulty','coding','linux','networking','cloud','certs','salary','remote','demand','bestFor'];
+  table.innerHTML = `<thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead>
+    <tbody>${CAREERS.map(c => {
+      const v = c.comparison;
+      return `<tr>
+        <td><strong>${c.icon} ${c.name}</strong></td>
+        <td>${v.difficulty}</td><td>${v.coding}</td><td>${v.linux}</td>
+        <td>${v.networking}</td><td>${v.cloud}</td><td>${v.certs}</td>
+        <td>${v.salary}</td><td>${v.remote}</td><td>${v.demand}</td><td>${v.bestFor}</td>
+      </tr>`;
+    }).join('')}</tbody>`;
+}
+
+/* --- Master Roadmap --- */
+function renderMasterRoadmap() {
+  const el = document.getElementById('masterRoadmap');
+  el.innerHTML = MASTER_ROADMAP.map(s => `
+    <div class="master-step">
+      <span class="ms-num">Step ${s.num}</span>
+      <h4>${s.title}</h4>
+      <p>${s.desc}</p>
+    </div>`).join('');
+}
+
+/* --- FAQs --- */
+function renderFAQs() {
+  const el = document.getElementById('faqContainer');
+  el.innerHTML = FAQS.map((f,i) => `
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>${f.q}</span><span class="toggle-icon">+</span>
+      </button>
+      <div class="faq-a"><p>${f.a}</p></div>
+    </div>`).join('');
+}
+
+/* --- Resources --- */
+function renderResourcesSection() {
+  const el = document.getElementById('resGrid');
+  el.innerHTML = RESOURCES.map(r => `
+    <div class="res-card">
+      <h4>${r.title}</h4>
+      <ul>${r.items.map(x=>`<li>${x}</li>`).join('')}</ul>
+    </div>`).join('');
+}
+
+/* ================================================================
+   INTERACTIVITY
+   ================================================================ */
+
+/* Toggle sub-sections */
+function toggleSub(btn) {
+  const content = btn.nextElementSibling;
+  const isOpen = content.classList.contains('open');
+  btn.classList.toggle('open');
+  content.classList.toggle('open');
+  // If opening, let max-height animate
+  if (!isOpen) {
+    content.style.maxHeight = content.scrollHeight + 'px';
+    setTimeout(() => { content.style.maxHeight = '8000px'; }, 400);
+  }
+}
+
+/* Toggle FAQ */
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  btn.classList.toggle('open');
+  answer.classList.toggle('open');
+  if (!isOpen) {
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    setTimeout(() => { answer.style.maxHeight = '600px'; }, 350);
+  }
+}
+
+/* Smooth scroll to career section */
+function scrollToSection(id) {
+  const el = document.getElementById('detail-' + id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
+
+/* Search / Filter */
+function initSearch() {
+  const input = document.getElementById('searchInput');
+  const cards = () => document.querySelectorAll('.path-card');
+  const details = () => document.querySelectorAll('.career-detail');
+  const noResults = document.getElementById('noResults');
+
+  input.addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    if (!q) {
+      cards().forEach(c => c.style.display = '');
+      document.querySelectorAll('.content-section[id^="detail-"]').forEach(s => s.style.display = '');
+      noResults.classList.add('hidden');
+      return;
+    }
+
+    let visibleCount = 0;
+    cards().forEach(card => {
+      const id = card.dataset.id;
+      const career = CAREERS.find(c => c.id === id);
+      const searchText = [
+        career.name, career.tagline,
+        ...career.jobs, ...career.tools,
+        ...career.skills.beginner, ...career.skills.intermediate, ...career.skills.advanced
+      ].join(' ').toLowerCase();
+
+      const match = searchText.includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) visibleCount++;
+
+      const detailSection = document.getElementById('detail-' + id);
+      if (detailSection) detailSection.closest('.content-section').style.display = match ? '' : 'none';
+    });
+
+    noResults.classList.toggle('hidden', visibleCount > 0);
+  });
+}
+
+/* Navigation */
+function initNav() {
+  const nav = document.getElementById('mainNav');
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+
+  // Scroll effect
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Mobile toggle
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+  });
+
+  // Close mobile menu on link click
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => links.classList.remove('open'));
+  });
+}
+
+/* ================================================================
+   INITIALIZATION
+   ================================================================ */
+function init() {
+  renderPathCards();
+  renderCareerDetails();
+  renderComparison();
+  renderMasterRoadmap();
+  renderFAQs();
+  renderResourcesSection();
+  initSearch();
+  initNav();
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
